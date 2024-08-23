@@ -1,0 +1,38 @@
+{
+  "name": "sajidpervez.com",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:astro dev:tailwind",
+    "dev:astro": "astro dev",
+    "dev:tailwind": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.3",
+    "@astrojs/preact": "^3.5.1",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/vercel": "^7.8.0",
+    "@iconify-json/mdi": "^1.1.68",
+    "@iconify/tools": "^4.0.5",
+    "astro": "^4.13.1",
+    "astro-icon": "^1.1.0",
+    "autoprefixer": "^10.4.20",
+    "cheerio": "^1.0.0",
+    "lucide": "^0.427.0",
+    "postcss": "^8.4.41"
+  },
+  "devDependencies": {
+    "@iconify/tailwind": "^1.1.2",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.4.9"
+  },
+  "overrides": {
+    "astro-icon": {
+      "@iconify/tools": "^4.0.0"
+    }
+  }
+}

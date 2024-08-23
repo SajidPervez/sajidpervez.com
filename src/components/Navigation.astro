@@ -1,0 +1,79 @@
+---
+import {Icon} from 'astro-icon/components';
+const props = Astro.props;
+---
+<header class="relative z-20">
+  <div class="flex w-full max-w-7xl mx-auto px-4 py-4">
+    <div class="flex justify-between items-center w-full max-w-7xl px-4 mx-auto py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <div class="text-gray-700 font-bold text-2xl px-4 py-2 hover:animate-blink">
+          <span>
+            <img src="/src/assets/favicon-beige.png" alt="" width=0.5em height=0.5em />
+            <a  
+            href="/"> <span><h2 class="font-bold">Sajid Pervez.</h2></span>
+          </a>
+          </span>
+          
+        </div>
+      </div>
+
+      <!-- Menu with Text and Dropdown -->
+      <div class="ml-auto">
+        <nav>
+          <ul class="flex space-x-4 items-center">
+            <!-- The Core with Dropdown -->
+            <li class="relative group">
+              <button  
+                class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 flex items-center"
+                id="core-button"
+              >
+                The Core
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                
+              </button>
+              <!-- Dropdown Menu -->
+              <ul id="dropdown" class="hidden absolute left-0 mt-2 w-48 z-30 bg-white border rounded-lg shadow-lg">
+                <li>
+                  <a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Essays</a>
+                </li>
+                <li>
+                  <a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Reading Corner</a>
+                </li>
+                <li>
+                  <a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Listening</a>
+                </li>
+              </ul>
+            </li>
+            <!-- About -->
+            <li>
+              <a href="/about/" class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700">
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+    const coreButton = document.getElementById('core-button');
+    const dropdown = document.getElementById('dropdown');
+  
+    // Toggle dropdown on button click
+    coreButton.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+    });
+  
+    // Close dropdown when clicking outside, but not when clicking inside dropdown
+    document.addEventListener('click', function(e) {
+      const isClickInside = coreButton.contains(e.target) || dropdown.contains(e.target);
+      if (!isClickInside) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  </script>
