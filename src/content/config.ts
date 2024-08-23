@@ -2,7 +2,7 @@ import { imageConfig } from "astro:assets";
 import { defineCollection, z } from "astro:content";
 
 const blogCollection = defineCollection({
-  type: "data",
+  type: "content",
   schema: ({ image }) => z.object({
     title: z.string(),
     author: z.string(),
