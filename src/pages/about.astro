@@ -1,18 +1,25 @@
 ---
-//imports
-import BaseLayout from "../layouts/BaseLayout.astro";
-// javascript
-const pageTitle = "About Me";
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+import { getCollection } from 'astro:content';
+
+// Fetch the content from the markdown file
+const aboutContent = await getCollection('author', ({ slug }) => slug === 'about');
+const pageTitle = Astro.props;
 ---
 
-<BaseLayout title={pageTitle}>   
-   
-</BaseLayout> 
+<BaseLayout pageTitle={pageTitle}>
+  <section class="container mx-auto px-6 py-16">
+    <div class="flex flex-col md:flex-row items-center">
+      <!-- Column 1: Text -->
+      <div class="md:w-1/2">
+        
+        <slot />
+      </div>
+      <!-- Column 2: Image -->
+      <div class="md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
+        <img src="/src/assets/Sajid.jpeg" alt="Your Name" class="rounded-full w-64 h-64 object-cover" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

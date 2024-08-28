@@ -8,8 +8,14 @@ export async function getStaticPaths() {
         props: {entry},
     }));
 }
+export const prerender = true; 
 const { entry } = Astro.props;
+if (!entry) {
+    throw new Error("Entry not found");
+}
+
 const { Content } = await entry.render();
+console.log(entry);
 ---
 
 <Content />
