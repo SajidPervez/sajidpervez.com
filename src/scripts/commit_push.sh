@@ -13,6 +13,13 @@ if [ -n "$(git status --porcelain)" ]; then
   echo "Enter your commit message:"
   read commit_message
 
+ # Display untracked files (if any)
+  untracked_files=$(git ls-files --others --exclude-standard)
+  if [ -n "$untracked_files" ]; then
+    echo "Untracked files detected:"
+    echo "$untracked_files"
+    echo "Adding untracked files to the staging area..."
+  fi
   # Add all changes to the staging area
   git add .
   exit_if_failed
