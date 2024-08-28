@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 // Fetch the content from the markdown file
 const aboutContent = await getCollection('authors', ({ slug }) => slug === 'about');
 const pageTitle = Astro.props;
-console.log(aboutContent);
+console.log('aboutContent:', aboutContent);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
