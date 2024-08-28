@@ -4,8 +4,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 // Fetch the content from the markdown file
-const aboutContent = await getCollection('author', ({ slug }) => slug === 'about');
+const aboutContent = await getCollection('authors', ({ slug }) => slug === 'about');
 const pageTitle = Astro.props;
+console.log(aboutContent);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
