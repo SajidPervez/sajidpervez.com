@@ -19,7 +19,7 @@ export default defineConfig({
     rehypePlugins: [],
   },
   integrations: [
-    preact(),
+    preact({ compat: true}),
     icon(),
     mdx(),
   ],
