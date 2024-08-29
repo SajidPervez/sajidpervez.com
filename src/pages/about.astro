@@ -7,6 +7,13 @@ import { getCollection } from 'astro:content';
 const aboutContent = await getCollection('authors', ({ slug }) => slug === 'about');
 const pageTitle = Astro.props;
 console.log('aboutContent:', aboutContent);
+
+if (!aboutContent.length) {
+  throw new Error("No content found for 'about'.");
+}
+
+// Render the markdown content
+const { Content } = await aboutContent[0].render();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -18,7 +25,7 @@ console.log('aboutContent:', aboutContent);
         {aboutContent.length > 0 ? (
           <div>
             <h1 class="text-4xl font-bold mb-6">About Me</h1>
-            <Markdown content={aboutContent[0].body} />
+            <Content />
           </div>
         ) : (
           <p>No content found.</p>
