@@ -15,7 +15,14 @@ console.log('aboutContent:', aboutContent);
       <!-- Column 1: Text -->
       <div class="md:w-1/2">
         
-        <slot />
+        {aboutContent.length > 0 ? (
+          <div>
+            <h1 class="text-4xl font-bold mb-6">About Me</h1>
+            <Markdown content={aboutContent[0].body} />
+          </div>
+        ) : (
+          <p>No content found.</p>
+        )}
       </div>
       <!-- Column 2: Image -->
       <div class="md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
