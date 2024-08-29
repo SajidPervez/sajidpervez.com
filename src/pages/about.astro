@@ -6,14 +6,20 @@ import { getCollection } from 'astro:content';
 // Fetch the content from the markdown file
 const aboutContent = await getCollection('authors', ({ slug }) => slug === 'about');
 const pageTitle = Astro.props;
-console.log('aboutContent:', aboutContent);
+
 
 if (!aboutContent.length) {
   throw new Error("No content found for 'about'.");
 }
 
+// Extract the necessary data from the content
+const { data, render } = aboutContent[0];
+const imagePath = data.cover?.src || '/src/assets/Sajid.jpg'; // Assuming cover contains the image path
+//const pageTitle = data.title || 'About Me';
+
 // Render the markdown content
-const { Content } = await aboutContent[0].render();
+const { Content } = await render();
+console.log('frontmatter:', aboutContent);
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -21,19 +27,12 @@ const { Content } = await aboutContent[0].render();
     <div class="flex flex-col md:flex-row items-center">
       <!-- Column 1: Text -->
       <div class="md:w-1/2">
-        
-        {aboutContent.length > 0 ? (
-          <div>
-            <h1 class="text-4xl font-bold mb-6">About Me</h1>
-            <Content />
-          </div>
-        ) : (
-          <p>No content found.</p>
-        )}
+        <h1 class="text-4xl font-bold mb-6">About Me</h1>
+        <Content />
       </div>
       <!-- Column 2: Image -->
       <div class="md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
-        <img src="/src/assets/Sajid.jpeg" alt="Your Name" class="rounded-full w-64 h-64 object-cover" />
+        <img src={imagePath} alt={data.altText} class="rounded-full w-64 h-64 object-cover" />
       </div>
     </div>
   </section>
