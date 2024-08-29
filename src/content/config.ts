@@ -23,7 +23,7 @@ const authorCollection = defineCollection({
     isDraft: z.boolean(),
     pubDate: z.string().transform(str => new Date(str)),
     tags: z.array(z.string()),
-    cover: image().optional(),
+    cover: z.array(image().optional()),
     altText: z.string(),
     canonicalURL: z.string().url(),
   })

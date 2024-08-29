@@ -207,11 +207,7 @@ a.no-underline::after {
   content: none;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
+
 
 img.sajid {
   border-radius: 8px;
