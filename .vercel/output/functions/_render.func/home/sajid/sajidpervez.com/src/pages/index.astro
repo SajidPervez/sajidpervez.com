@@ -1,0 +1,26 @@
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Cards from '../components/Cards.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+
+const pageTitle = "Sajid's Corner";
+const heroHeading = "I write cyber essays to learn & share my experiences and insights";
+const subtitle1 = "Write code (when required), tinker with Gen AI tools, read books but listen alot, and play badminton.";
+const subtitle2 = " Leading the change in product security covering all aspects of AppSec @ ";
+const currentEmployerLink = "https://www.myob.com";
+
+---
+<BaseLayout title={pageTitle}>
+    <HeroSection title={heroHeading} subtitle1={subtitle1} subtitle2={subtitle2} link={currentEmployerLink}/>
+    
+    <!-- <section class="container mx-auto py-12 px-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> -->
+        <Cards/>
+        <!-- </div>
+        
+    </section> -->
+</BaseLayout>

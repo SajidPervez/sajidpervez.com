@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+import Prose from "../components/Prose.astro";
+const { frontmatter, Content } = Astro.props;
 
 ---
 <BaseLayout pageTitle={frontmatter.pageTitle}
     
-    
+
     <header class="mb-4">
       <h1 class="text-3xl font-bold">
         {frontmatter.title}
@@ -21,11 +22,14 @@ const { frontmatter } = Astro.props;
         By {frontmatter.author} on {frontmatter.pubDate.toString()}
       </p>
     </header>
+    <Prose>
     
-    <main class="max-w-3xl mx-auto">
-      <slot />
-    </main>
+     
+        <slot />
+      
+      
     
+  </Prose>
 
     
  </BaseLayout>

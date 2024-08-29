@@ -13,4 +13,11 @@ tags: []
 canonicalURL: "https://localhost:4321/blog/about"
 ---
 
-I am Sajid Pervez, a Principal Security Engineer specializing in product security, including application and cloud security...
+I am a product security engineer who is supposed to wear multiple hats within security multiple times during a day.
+
+* I am core appsec engineer - talking to engineers about scanner findings and remediations, or doing threat modeling 
+* In the next meeting I am a cloud security person - helping a team with securing their api with cloud security controls 
+* Then I put on _security architect_ hat - reviewing the solution architecture 
+* And at times I writing code to solve specific problem 
+
+The role is an intersection of various skill sets from *cybersecurity*, *coding*, *empathy*, and full of *absolute challanges*.
