@@ -20,4 +20,5 @@ I am a product security engineer who is supposed to wear multiple hats within se
 * Then I put on _security architect_ hat - reviewing the solution architecture 
 * And at times I writing code to solve specific problem 
 
+
 The role is an intersection of various skill sets from *cybersecurity*, *coding*, *empathy*, and full of *absolute challanges*.
