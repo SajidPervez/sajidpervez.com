@@ -30,10 +30,11 @@ Even before that, I was **Secure Code Consultant** at **[Telstra](https://telstr
 And the final bit of this part ends where I started my career in Australia. It was mostly writing code and doing **PCI-DSS** and **PA-DSS** audits - became a **PCI QSA**.
 
 # A bit of history
-I am originally from Pakistan immigrated to Australia in 2015.
+I am originally from Pakistan and immigrated to Australia in 2015.
 
 I have earned an undergraduate and masters degrees in Computer Sciences and started my career has a developer writing code for cryptographic solutions and integrating PKI and 2FA into enterprise environments. Some more fun parts of the job involved breaking applications.
 
+Thats all my friend, lets hope to meet or speak sometime.
 
 
 
