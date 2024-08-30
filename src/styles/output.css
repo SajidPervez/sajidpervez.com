@@ -1855,10 +1855,6 @@ img.sajid {
   text-decoration-line: underline;
 }
 
-.prose-h1\:font-moderustic :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-  font-family: Moderustic, sans-serif;
-}
-
 .prose-h1\:text-xl :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1868,10 +1864,6 @@ img.sajid {
   font-weight: 700;
 }
 
-.prose-h2\:font-moderustic :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-  font-family: Moderustic, sans-serif;
-}
-
 .prose-p\:text-justify :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   text-align: justify;
 }
@@ -1879,10 +1871,6 @@ img.sajid {
 .prose-a\:text-blue-600 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
-}
-
-.prose-li\:list-disc :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-  list-style-type: disc;
 }
 
 .prose-img\:rounded-xl :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
