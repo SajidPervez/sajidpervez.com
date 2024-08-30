@@ -9,10 +9,8 @@ export default {
       fontFamily: {
         'canela-deck': ['Canela Deck', 'sans-serif'],
         'canela-text': ['Canela Text', 'sans-serif'],
-        'moderustic' : ['Moderustic', 'sans-serif'],
-        'sans': ['ui-sans-serif', 'system-ui', 'sans-serif'],
-        'georgia': ['ui-serif', 'Georgia', 'serif'],
-        'mono': ['ui-monospace', 'SFMono-Regular', 'mono'],
+        'Lato' : ['Lato', 'sans-serif'],
+        
       },
     },
   },
