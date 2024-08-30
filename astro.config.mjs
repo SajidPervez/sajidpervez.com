@@ -21,7 +21,7 @@ export default defineConfig({
   integrations: [
     preact({ compat: true}),
     icon(),
-    mdx()
+    mdx(),
   ],
   output: "server",
   adapter: vercel()
