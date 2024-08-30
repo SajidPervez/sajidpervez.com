@@ -10,12 +10,15 @@ const { title, subtitle1, subtitle2, backgroundImage, link } = Astro.props;
   <div class="  absolute inset-0 "></div> <!-- Overlay -->
   <div class="relative text-center text-gray-600 z-10">
     <h1 class="text-7xl font-extrabold">{title || 'Welcome to My Blog'}</h1>
+    
     <p class="mt-2 text-xl overflow-hidden whitespace-nowrap  animate-none">
       {subtitle1 || 'This is a default subtitle for all pages.'}
     </p>
+  
     <p class="mt-2 text-xl overflow-hidden whitespace-nowrap  animate-none">
       {subtitle2 || 'This is a default subtitle for all pages.'} <a href={link} class="text-purple-700 font-bold font-canela-text"> MYOB</a>
     </p>
+  
   </div>
 </section>
 </div>
