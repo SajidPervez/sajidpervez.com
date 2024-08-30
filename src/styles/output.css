@@ -1208,12 +1208,12 @@ video {
   height: 12rem;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
 .h-\[400px\] {
   height: 400px;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .w-4 {
@@ -1224,8 +1224,8 @@ video {
   width: 12rem;
 }
 
-.w-64 {
-  width: 16rem;
+.w-auto {
+  width: auto;
 }
 
 .w-full {
@@ -1823,7 +1823,6 @@ a.no-underline::after {
 img.sajid {
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  height: auto;
 }
 
 /* Override Tailwind Typography styles for ul > li */
