@@ -13,12 +13,7 @@ tags: []
 canonicalURL: "https://localhost:4321/blog/about"
 ---
 
-I am a product security engineer who is supposed to wear multiple hats within security multiple times during a day.
-
-* I am core appsec engineer - talking to engineers about scanner findings and remediations, or doing threat modeling 
-* In the next meeting I am a cloud security person - helping a team with securing their api with cloud security controls 
-* Then I put on _security architect_ hat - reviewing the solution architecture 
-* And at times I writing code to solve specific problem 
+# Some Context
+My career is at an intersection of various skill sets from *appsec*, , *cloudsec*,  and *coding*. These are my core areas of expertise. Everyday challanges and much needed *empathy* adds spice and sweetness into my role.
 
 
-The role is an intersection of various skill sets from *cybersecurity*, *coding*, *empathy*, and full of *absolute challanges*.

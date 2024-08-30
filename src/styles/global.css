@@ -47,6 +47,15 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: "Moderustic", sans-serif;
+  src: url('/src/fonts/Moderustic-Bold.ttf') format('ttf');
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
  html {
     background-color: #dad7cd;
     font-family: sans-serif;
@@ -222,4 +231,9 @@ img.sajid {
   content: counter(list-item) ". "; /* Ensure numbers are shown */
   color:rgb(105, 104, 104); /* Replace with your preferred number color */
   font-weight: bold; /* Optional: make the numbers bold */
+}
+
+.prose h1, 
+.prose h2 {
+  text-decoration: none; /* Removes underline */
 }

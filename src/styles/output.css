@@ -1156,6 +1156,10 @@ video {
   margin-right: 1.5rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1388,19 +1392,9 @@ video {
   padding-right: 1rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .py-2 {
@@ -1607,6 +1601,18 @@ video {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Moderustic", sans-serif;
+
+  src: url('/src/fonts/Moderustic-Bold.ttf') format('ttf');
+
+  font-optical-sizing: auto;
+
+  font-weight: 600;
+
+  font-style: normal;
+}
+
 html {
   background-color: #dad7cd;
   font-family: sans-serif;
@@ -1786,6 +1792,12 @@ img.sajid {
   /* Optional: make the numbers bold */
 }
 
+.prose h1, 
+.prose h2 {
+  text-decoration: none;
+  /* Removes underline */
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
@@ -1843,6 +1855,10 @@ img.sajid {
   text-decoration-line: underline;
 }
 
+.prose-h1\:font-moderustic :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-family: Moderustic, sans-serif;
+}
+
 .prose-h1\:text-xl :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1850,6 +1866,10 @@ img.sajid {
 
 .prose-h1\:font-bold :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-weight: 700;
+}
+
+.prose-h2\:font-moderustic :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-family: Moderustic, sans-serif;
 }
 
 .prose-p\:text-justify :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
