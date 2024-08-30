@@ -12,7 +12,7 @@ altText: ""
 tags: []
 canonicalURL: "https://localhost:4321/blog/about"
 ---
-![Icon Description](/src/assets/favicon-beige.png) 
+ 
 # A bit of context
 
 My career is at an intersection of various skill sets from *appsec*, , *cloudsec*,  and *coding*. These are my core areas of expertise. Everyday challanges and much needed *empathy* adds spice and sweetness into my role.
