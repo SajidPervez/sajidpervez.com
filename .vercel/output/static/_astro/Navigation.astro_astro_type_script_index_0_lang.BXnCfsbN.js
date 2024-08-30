@@ -1,1 +1,0 @@
-const e=document.getElementById("core-button"),t=document.getElementById("dropdown");e.addEventListener("click",function(){t.classList.toggle("hidden")});document.addEventListener("click",function(n){e.contains(n.target)||t.contains(n.target)||t.classList.add("hidden")});
