@@ -13,7 +13,7 @@ tags: []
 canonicalURL: "https://localhost:4321/blog/about"
 ---
 
-# <img src="/src/assets/2-dots.png" alt="Icon" width="20" height="20" style="display: inline-block; vertical-align: middle; margin-right: 6px; margin-top: 0px; margin-bottom: 0px;"> A Little Context
+# <img src="/2-dots.png" alt="Icon" width="20" height="20" style="display: inline-block; vertical-align: middle; margin-right: 6px; margin-top: 0px; margin-bottom: 0px;"> A Little Context
 
 My career is at an intersection of various skill sets from *appsec*, , *cloudsec*,  and *coding*. These are my core areas of expertise. Everyday challanges and much needed *empathy* adds spice and sweetness into my role.
 
@@ -29,7 +29,7 @@ Even before that, I was **Secure Code Consultant** at **[Telstra](https://telstr
 
 And the final bit of this part ends where I started my career in Australia. It was mostly writing code and doing **PCI-DSS** and **PA-DSS** audits - became a **PCI QSA**.
 
-# <img src="/src/assets/2-dots.png" alt="Icon" width="20" height="20" style="display: inline-block; vertical-align: middle; margin-right: 6px; margin-top: 0px; margin-bottom: 0px;"> A bit of history 
+# <img src="/2-dots.png" alt="Icon" width="20" height="20" style="display: inline-block; vertical-align: middle; margin-right: 6px; margin-top: 0px; margin-bottom: 0px;"> A bit of history 
 I am originally from Pakistan and immigrated to Australia in 2015.
 
 I have earned an undergraduate and masters degrees in Computer Sciences and started my career has a developer writing code for cryptographic solutions and integrating PKI and 2FA into enterprise environments. Some more fun parts of the job involved breaking applications.
