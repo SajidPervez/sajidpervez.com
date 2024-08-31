@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.9 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1172,6 +1172,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1848,6 +1852,8 @@ img.sajid {
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
   font-style: normal;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media (prefers-color-scheme: dark) {
