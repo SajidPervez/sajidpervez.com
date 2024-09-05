@@ -1,6 +1,5 @@
-# Sajidpervez.com
+# About Sajidpervez.com
 
-## About Sajidpervez.com
 This is my digital corner on the web where I write essays, share my reading and  listening collections with anyone and everyone.
 
 ## My tech stack
