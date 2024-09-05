@@ -1,62 +1,51 @@
 ---
+// Import necessary components
 import BaseLayout from "./BaseLayout.astro";
 import Prose from "../components/Prose.astro";
 import TOC from '../components/TOC.astro';
 
-//const { frontmatter, Content } = Astro.props;
-// Extract the headings from the markdown content
-export interface Props {
- content: {
-  title: string;
- },
- headings: {
-  slug: string;
-  text: string;
-  depth: number;
- }[],
- frontmatter,
- Content
-}
-
+// Extract the props
 const { frontmatter, content: { title }, headings, Content } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.pageTitle}
+
+<BaseLayout pageTitle={frontmatter.pageTitle}>
+  <header>
+    <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
+    <p class="text-gray-500">
+      By {frontmatter.author} on {frontmatter.pubDate.toString()}
+    </p>
+    <div class="tags">
+      {frontmatter.tags.map((tag) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))}
+    </div>
     
+  </header>
 
-    <header class="mb-4">
-      
-      <h1 class="text-3xl font-bold">
-        {frontmatter.title}
-      </h1>
-      <div class="tags">
-        {frontmatter.tags.map((tag) => (
-          <p class="tag">
-            <a href={`/tags/${tag}`}>{tag}</a>
-          </p>
-        ))}
-      </div>
-      <p class="text-gray-500">
-        By {frontmatter.author} on {frontmatter.pubDate.toString()}
-      </p>
-    </header>
-
-    <body>
-
-      {headings && headings.length > 0 && (
-        <nav class="article-toc">
-          <h3>Table of Content</h3>
-          <TOC headings={headings} />
-        </nav>
-      )}
-
+  <!-- Create a responsive grid layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Main Content Area -->
+    <div class="col-span-2">
       <Prose>
-          <slot />
-    </Prose>
+        <slot />
+      </Prose>
+    </div>
+
+    <!-- TOC for large screens, top for small screens -->
+    {headings && headings.length > 0 && (
+      <nav class="article-toc hidden lg:block lg:sticky lg:top-4">
+        <h2>Table of Content</h2>
+        <TOC headings={headings} />
+      </nav>
+    )}
+  </div>
+</BaseLayout>
 
 
-    </body>
- </BaseLayout>
  <script>
+
   addIntersectionObserver();
   
   function addIntersectionObserver() {

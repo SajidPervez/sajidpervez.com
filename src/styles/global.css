@@ -189,8 +189,8 @@ p, a, li, span, div {
   }
   
   .tag {
-    margin: 0.05em;
-    padding: 0.5em 0.5em; 
+    /*margin: 0.05em; */ 
+    padding: 0.5em;
     font-size: 1em;
     /*border-radius: 0.5em;
     background-color: #F8FCFD; */
@@ -265,7 +265,18 @@ img.sajid {
     margin-bottom: 0px;
 }
 
-.article-toc{
-  position:sticky;
-  top:0
+.article-toc {
+  /* Only applied for large screens */
+  max-height: calc(100vh - 2rem); /* Adjust as needed */
+  overflow-y: auto; /* Allows scrolling if content exceeds the screen height */
+  padding: 1rem;
+  /*border-left: 1px solid #e5e7eb; /* Optional border to visually separate the TOC */
+}
+
+
+@media (min-width: 1024px) { /* Tailwind's 'lg' breakpoint */
+  .article-toc {
+    position: sticky;
+    top: 0;
+  }
 }

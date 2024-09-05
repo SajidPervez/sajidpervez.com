@@ -18,21 +18,25 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
----
+const { posts = [] } = Astro.props; // Set default to an empty array to avoid undefined errors
+--- 
 <BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
-    <ul>
-        {posts.map((post) => 
-          <BlogPost 
-              url={post.data.canonicalURL} 
-              title={post.data.title} 
-              author={post.data.author}
-              pubDate={post.data.pubDate}
-              cover={post.data.cover}
-              altText={post.data.altText}
-              id={post.slug}
-               />
-            )}
-    </ul>
+  <p>Posts tagged with "{tag}"</p>
+  <ul>
+    {posts.length > 0 ? (
+      posts.map((post) => (
+        <BlogPost 
+          url={post.data.canonicalURL} 
+          title={post.data.title} 
+          author={post.data.author}
+          pubDate={post.data.pubDate}
+          cover={post.data.cover}
+          altText={post.data.altText}
+          id={post.slug}
+        />
+      ))
+    ) : (
+      <p>No posts found with the tag "{tag}".</p>
+    )}
+  </ul>
 </BaseLayout>
