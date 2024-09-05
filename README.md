@@ -3,7 +3,10 @@
 ## About Sajidpervez.com
 This is my digital corner on the web where I write essays, share my reading and  listening collections with anyone and everyone.
 
-I have used Astro to build my site from scratch and if you want to do it too, check it out below. Happy to help if I can.
+## My tech stack
+- AstroJS - Main framework
+- TailwindCSS - Styling and typography
+- Fonts - Canela Deck and Lato
 
 ## 
 ## 👀 Want to learn more?
