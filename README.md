@@ -7,6 +7,7 @@ This is my digital corner on the web where I write essays, share my reading and 
 - AstroJS - Main framework
 - TailwindCSS - Styling and typography
 - Fonts - Canela Deck and Lato
+- Deployment - Vercel
 
 ## 
 ## 👀 Want to learn more?
