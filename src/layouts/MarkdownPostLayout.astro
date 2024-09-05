@@ -1,13 +1,30 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import Prose from "../components/Prose.astro";
-const { frontmatter, Content } = Astro.props;
+import TOC from '../components/TOC.astro';
 
+//const { frontmatter, Content } = Astro.props;
+// Extract the headings from the markdown content
+export interface Props {
+ content: {
+  title: string;
+ },
+ headings: {
+  slug: string;
+  text: string;
+  depth: number;
+ }[],
+ frontmatter,
+ Content
+}
+
+const { frontmatter, content: { title }, headings, Content } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.pageTitle}
     
 
     <header class="mb-4">
+      
       <h1 class="text-3xl font-bold">
         {frontmatter.title}
       </h1>
@@ -22,15 +39,48 @@ const { frontmatter, Content } = Astro.props;
         By {frontmatter.author} on {frontmatter.pubDate.toString()}
       </p>
     </header>
-    <Prose>
-    
-     
-        <slot />
-      
-      
-    
-  </Prose>
 
-    
+    <body>
+
+      {headings && headings.length > 0 && (
+        <nav class="article-toc">
+          <h3>Table of Content</h3>
+          <TOC headings={headings} />
+        </nav>
+      )}
+
+      <Prose>
+          <slot />
+    </Prose>
+
+
+    </body>
  </BaseLayout>
+ <script>
+  addIntersectionObserver();
+  
+  function addIntersectionObserver() {
+    const observer = new IntersectionObserver((sections) => {
+      console.log('sections', sections);
+      sections.forEach((section) => {
+        const heading = section.target.querySelector('h2, h3, h4, h5');
+        if (!heading) return;
+        const id = heading.getAttribute('id');
+  
+        // Get the link to this section's heading
+        const link = document.querySelector(`nav.toc li a[href="#${id}"]`);
+        if (!link) return;
+  
+        // Add/remove the .active class based on whether the
+        // section is visible
+        const addRemove = section.intersectionRatio > 0 ? 'add' : 'remove';
+        link.classList[addRemove]('active');
+      });
+    });
+  
+    document.querySelectorAll('.article-content section').forEach((section) => {
+      observer.observe(section);
+    })
+  }
+  </script>
  
