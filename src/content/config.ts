@@ -28,7 +28,21 @@ const authorCollection = defineCollection({
     canonicalURL: z.string().url(),
   })
 });
+
+const booksCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    author: z.string(),
+    cover: z.string(),
+    comments: z.string(),
+    url: z.string().url(),
+    status: z.string(),
+    
+  }),
+});
+
 export const collections = {
   'blog': blogCollection,
   'authors': authorCollection,
+  'books': booksCollection,
 };

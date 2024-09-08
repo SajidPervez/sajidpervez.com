@@ -1,0 +1,42 @@
+---
+const { title, author, cover, comments } = Astro.props;
+---
+
+<div class="book-card p-4 bg-white shadow-md rounded-lg border border-gray-200 w-full max-w-md">
+  <div class="cover-container mb-4">
+    <img src={cover} alt={`Cover of ${title}`} class="book-cover" />
+  </div>
+  <h3 class="text-lg font-semibold mb-1">{title}</h3>
+  <p class="text-gray-600 text-sm">{author}</p>
+  <p class="text-gray-500 mt-2 text-xs">{comments}</p>
+</div>
+
+<style>
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  opacity: 1;
+}
+
+.cover-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+</style>

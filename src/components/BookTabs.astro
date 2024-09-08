@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import BookCard from './BookCard.astro';
+
+// Fetch all books from the content collection
+const books = await getCollection('books');
+
+// Separate books by their status
+const toReadBooks = books.filter((book) => book.data.status === 'to-read');
+const readBooks = books.filter((book) => book.data.status === 'read');
+
+// Function to handle tab switching
+const handleTabClick = (tab) => {
+  document.querySelectorAll('.tab-content').forEach((content) => {
+    content.style.display = 'none'; // Hide all content sections
+  });
+  document.querySelector(`#${tab}`).style.display = 'block'; // Show selected tab content
+};
+---
+
+<div class="text-center py-8">
+  <div class="tab-container flex justify-center space-x-8 mt-6">
+    <!-- Tab for "Read" -->
+    <button 
+      class="tab active" 
+      on:click={() => handleTabClick('read')}
+    >
+      Read
+    </button>
+    
+    <!-- Tab for "To Read" -->
+    <button 
+      class="tab" 
+      on:click={() => handleTabClick('to-read')}
+    >
+      To Read
+    </button>
+  </div>
+  
+  <!-- Tab Content for "Read" -->
+  <div id="read" class="tab-content">
+    <section class="book-grid-container grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-6 max-w-6xl mx-auto">
+      {readBooks.map((book) => (
+        <BookCard 
+          title={book.data.title} 
+          author={book.data.author} 
+          cover={book.data.cover} 
+          url={book.data.url} 
+        />
+      ))}
+    </section>
+  </div>
+  
+  <!-- Tab Content for "To Read" -->
+  <div id="to-read" class="tab-content" style="display:none;">
+    <section class="book-grid-container grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-6 max-w-6xl mx-auto">
+      {toReadBooks.map((book) => (
+        <BookCard 
+          title={book.data.title} 
+          author={book.data.author} 
+          cover={book.data.cover} 
+          url={book.data.url} 
+        />
+      ))}
+    </section>
+  </div>
+</div>
+
+<style>
+.tab-container .tab {
+  padding: 8px 16px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.tab-container .tab:hover {
+  color: #007acc;
+}
+
+.tab-container .tab.active {
+  color: #007acc;
+  border-bottom-color: #007acc;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        contents.forEach(content => content.style.display = 'none');
+        const activeContent = document.querySelector(`#${tab.textContent.trim().toLowerCase().replace(' ', '-')}`);
+        if (activeContent) {
+          activeContent.style.display = 'block';
+        }
+      });
+    });
+
+    // Set the initial active tab to "Read"
+    document.querySelector('.tab').click();
+  });
+</script>

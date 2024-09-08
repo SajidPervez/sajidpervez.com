@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BookCard from './BookCard.astro';
+
+// Fetch all books from the content collection
+const books = await getCollection('books');
+---
+
+<div class="favorite-books grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6">
+  {books.map((book) => (
+    <BookCard 
+      title={book.data.title} 
+      author={book.data.author} 
+      cover={book.data.cover} 
+      comments={book.data.comments} 
+    />
+  ))}
+</div>
+
+<style>
+.favorite-books {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+</style>

@@ -5,7 +5,12 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
     const blogEntries = await getCollection('blog');
     const authorEntries = await getCollection('authors');
-
+    
+    // Extract all headings from post
+    const headings = await Promise.all(
+        blogEntries.map((entry) => entry.render().then((data) => data.headings)),
+        );
+        
     const blogPaths = blogEntries.map(entry => ({
         params: { slug: entry.slug },
         props: { entry, type: 'blog' },
@@ -15,6 +20,8 @@ export async function getStaticPaths() {
         params: { slug: entry.slug },
         props: { entry, type: 'author' },
     }));
+
+    
 
     return [...blogPaths, ...authorPaths];
 }

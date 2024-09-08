@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BookTabs from '../components/BookTabs.astro';
+---
+
+<BaseLayout pageTitle="Library">
+  <section class="text-center py-8">
+    <h1 class="text-5xl font-bold mb-2">Library</h1>
+    <p class="mt-4 text-lg text-gray-600">Books I’ve read that significantly influenced how I see the world.</p>
+  </section>
+
+  <!-- Include the BookTabs component -->
+  <BookTabs client:load />
+</BaseLayout>
