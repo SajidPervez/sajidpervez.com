@@ -1,7 +1,7 @@
 ---
 title: "Alic & Bob Learn Application Security"
 author: "Tanya Janca"
-cover: "/src/assets/alice-and-bob-learn-app-sec.jpg"
+cover: "/alice-and-bob-learn-app-sec.jpg"
 comments: "Alice and Bob Learn Application Security is perfect for aspiring application security engineers and practicing software developers, as well as software project managers, penetration testers, and chief information security officers who seek to build or improve their application security programs."
 url: "https://www.amazon.com.au/Alice-Bob-Learn-Application-Security/dp/1119687357"
 status: "read" # Use "to-read" for books yet to be read and "read" for books already read

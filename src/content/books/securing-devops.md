@@ -1,7 +1,7 @@
 ---
 title: "Securing Devops"
 author: "Julian Vehent"
-cover: "/src/assets/securing-devops.jpg"
+cover: "/securing-devops.jpg"
 comments: "Securing DevOps explores how the techniques of DevOps and security should be applied together to make cloud services safer."
 url: "https://www.manning.com/books/securing-devops"
 status: "read"
