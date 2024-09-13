@@ -41,8 +41,19 @@ const booksCollection = defineCollection({
   }),
 });
 
+const podcastsCollection = defineCollection({
+  schema: z.object({
+    name: z.string(),
+    host: z.string(),
+    description: z.string(),
+    cover: z.string(),
+    url: z.string().url(),
+  }),
+});
+
 export const collections = {
   'blog': blogCollection,
   'authors': authorCollection,
   'books': booksCollection,
+  'podcasts': podcastsCollection,
 };

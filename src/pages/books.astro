@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import BookTabs from '../components/BookTabs.astro';
+import { getCollection } from 'astro:content';
+import BookCard from '../components/BookCard.jsx'; // Import the React component
+
+// Fetch all books from the content collection
+const books = await getCollection('books');
 ---
 
 <BaseLayout pageTitle="Library">
@@ -9,6 +13,18 @@ import BookTabs from '../components/BookTabs.astro';
     <p class="mt-4 text-lg text-gray-600">Books I’ve read that significantly influenced how I see the world.</p>
   </section>
 
-  <!-- Include the BookTabs component -->
-  <BookTabs client:load />
+  <!-- Grid Layout for All Books -->
+  <section class="book-grid-container grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-6 max-w-6xl mx-auto">
+    {books.map((book) => (
+      <BookCard 
+        key={book.slug}
+        title={book.data.title}
+        author={book.data.author}
+        cover={book.data.cover}
+        comments={book.data.comments}
+        url={book.data.url}
+        status={book.data.status}
+      />
+    ))}
+  </section>
 </BaseLayout>

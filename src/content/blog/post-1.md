@@ -37,7 +37,7 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
-## What\\'s next 4
+## What's next 4
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 

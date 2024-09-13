@@ -280,3 +280,67 @@ img.sajid {
     top: 0;
   }
 }
+
+.book-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px); /* Hover effect to lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
+}
+
+.cover-container {
+  height: 280px; /* Consistent height for all covers */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures all images cover the same area */
+  display: block;
+}
+.text-yellow-600 {
+  color: #d97706; /* Adjust yellow color if needed */
+}
+
+.text-green-600 {
+  color: #16a34a; /* Adjust green color if needed */
+}
+
+.text-gray-500 {
+  color: #6b7280; /* Standard gray for 'Read' */
+}
+
+.podcast-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podcast-card:hover {
+  transform: translateY(-5px); /* Hover effect to lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
+}
+
+.cover-container {
+  width: 100%;
+  height: auto;
+  padding: 10px; /* Adds padding around the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.podcast-cover {
+  width: 100%;
+  max-width: 300px; /* Ensures the image does not exceed the desired width */
+  height: auto; /* Adjusts the height automatically to maintain the aspect ratio */
+  object-fit: contain; /* Ensures the entire image is visible without cropping */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  display: block;
+}
+
+
