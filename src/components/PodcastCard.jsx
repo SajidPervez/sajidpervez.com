@@ -5,7 +5,7 @@ export default function PodcastCard({ name, host, description, cover, url }) {
     <div className="podcast-card w-full max-w-sm mx-auto p-4 rounded-lg shadow-md bg-white">
       {/* Podcast Cover */}
       <div className="cover-container mb-4 overflow-hidden rounded-md shadow-sm flex justify-center items-center">
-        <img src={cover.src} alt={`Cover of ${name}`} className="podcast-cover" />
+        <img src={cover} alt={`Cover of ${name}`} className="podcast-cover" />
       </div>
 
       {/* Podcast Details */}

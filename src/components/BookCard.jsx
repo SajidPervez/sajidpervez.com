@@ -5,7 +5,7 @@ export default function BookCard({ title, author, cover, comments, url, status }
     <div className="book-card w-full max-w-xs mx-auto">
       {/* Book Cover */}
       <div className="cover-container mb-4 overflow-hidden rounded-md shadow-md">
-        <img src={cover.src} alt={`Cover of ${title}`} className="book-cover" />
+        <img src={cover} alt={`Cover of ${title}`} className="book-cover" />
       </div>
 
       {/* Book Details */}
