@@ -1099,6 +1099,10 @@ video {
   visibility: visible;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -1129,6 +1133,10 @@ video {
 
 .z-30 {
   z-index: 30;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .order-1 {
@@ -1232,6 +1240,10 @@ video {
   height: auto;
 }
 
+.max-h-full {
+  max-height: 100%;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -1250,6 +1262,10 @@ video {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .max-w-sm {
@@ -1275,6 +1291,10 @@ video {
 
 .animate-none {
   animation: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .grid-cols-1 {
@@ -1364,6 +1384,11 @@ video {
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-gray-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
@@ -1372,6 +1397,14 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
+.bg-opacity-75 {
+  --tw-bg-opacity: 0.75;
 }
 
 .from-neutral-400 {
@@ -2021,6 +2054,76 @@ img.sajid {
   display: block;
 }
 
+.merch-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.merch-card:hover {
+  transform: translateY(-5px);
+  /* Hover effect to lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow on hover */
+}
+
+.cover-container {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  /* Adds padding around the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.merch-cover {
+  width: 100%;
+  max-width: 300px;
+  /* Ensures the image does not exceed the desired width */
+  height: auto;
+  /* Adjusts the height automatically to maintain the aspect ratio */
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* Ensures the entire image is visible without cropping */
+  border-radius: 8px;
+  /* Optional: Adds rounded corners */
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 0.875rem;
+  /* Equivalent to text-sm */
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.cover-container:hover .overlay-text {
+  opacity: 1;
+  /* Show overlay text on hover */
+}
+
+.lightbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+  /* Higher z-index to ensure it appears above other content */
+  cursor: pointer;
+  /* Makes it clear that clicking will close the lightbox */
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
@@ -2204,5 +2307,8 @@ img.sajid {
     line-height: 1.75rem;
   }
 }
+
+
+
 
 

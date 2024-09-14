@@ -51,9 +51,25 @@ const podcastsCollection = defineCollection({
   }),
 });
 
+// Define a collection schema for merch items
+const merchCollection = defineCollection({
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    cover: z.string(),
+    purchaseLinks: z.array(
+      z.object({
+        platform: z.string(),
+        url: z.string().url(),
+      })
+    ),
+  }),
+});
+
 export const collections = {
   'blog': blogCollection,
   'authors': authorCollection,
   'books': booksCollection,
   'podcasts': podcastsCollection,
+  'merch': merchCollection,
 };
