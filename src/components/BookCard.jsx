@@ -2,36 +2,39 @@ import React from 'react';
 
 export default function BookCard({ title, author, cover, comments, url, status }) {
   return (
-    <div className="book-card w-full max-w-xs mx-auto">
+    <div className="book-card w-full max-w-sm mx-auto p-4 rounded-lg shadow-md bg-white relative mb-6">
       {/* Book Cover */}
-      <div className="cover-container mb-4 overflow-hidden rounded-md shadow-md">
-        <img src={cover} alt={`Cover of ${title}`} className="book-cover" />
+      <div className="cover-container mb-4 overflow-hidden rounded-md shadow-sm">
+        <img src={cover} alt={`Cover of ${title}`} className="book-cover w-full h-auto object-cover rounded-md" />
       </div>
 
       {/* Book Details */}
-      <h3 className="text-lg font-medium text-gray-800 text-center">{title}</h3>
-      <p className="text-gray-500 text-center">{author}</p>
-      
-      {/* Comments Section */}
-      <p className="text-sm text-gray-600 mt-2 text-center">{comments}</p>
-
-      {/* Link to the Book's Page */}
-      {url && (
-        <div className="text-center mt-4">
-          <a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 font-semibold">
+      <div className="text-center">
+        <h3 className="text-lg font-bold text-gray-800">{title}</h3>
+        <p className="text-sm text-gray-500 mb-2">{author}</p>
+        <p className="text-sm text-gray-600 mb-4">{comments}</p>
+        
+        {/* Link to the Book's Page */}
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-semibold block mt-2"
+          >
             Link
           </a>
-        </div>
-      )}
+        )}
 
-      {/* Status Display */}
-      {status && (
-        <p className={`text-xs mt-2 text-center italic ${status === 'to-read' ? 'text-yellow-600' : status === 'reading' ? 'text-green-600' : 'text-gray-500'}`}>
-          {status === 'to-read' && 'To Read'}
-          {status === 'reading' && 'Currently Reading'}
-          {status === 'read' && 'Read'}
-        </p>
-      )}
+        {/* Status Display */}
+        {status && (
+          <p className={`text-xs mt-2 italic ${status === 'to-read' ? 'text-yellow-600' : status === 'reading' ? 'text-green-600' : 'text-gray-500'}`}>
+            {status === 'to-read' && 'To Read'}
+            {status === 'reading' && 'Currently Reading'}
+            {status === 'read' && 'Read'}
+          </p>
+        )}
+      </div>
     </div>
   );
 }

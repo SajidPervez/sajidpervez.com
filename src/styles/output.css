@@ -1127,14 +1127,6 @@ video {
   left: 0px;
 }
 
-.right-2 {
-  right: 0.5rem;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1280,16 +1272,8 @@ video {
   max-width: 100%;
 }
 
-.max-w-md {
-  max-width: 28rem;
-}
-
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-xs {
-  max-width: 20rem;
 }
 
 .origin-left {
@@ -1989,46 +1973,50 @@ img.sajid {
 
 .book-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .book-card:hover {
   transform: translateY(-5px);
-  /* Hover effect to lift the card */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  /* Adds a subtle shadow on hover */
 }
 
 .cover-container {
-  height: 280px;
-  /* Consistent height for all covers */
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  overflow: hidden;
 }
 
 .book-cover {
   width: 100%;
-  height: 100%;
+  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  /* Ensures all images cover the same area */
-  display: block;
+  border-radius: 8px;
 }
 
-.text-yellow-600 {
-  color: #d97706;
-  /* Adjust yellow color if needed */
+.text-center {
+  text-align: center;
 }
 
-.text-green-600 {
-  color: #16a34a;
-  /* Adjust green color if needed */
+.text-gray-800 {
+  color: #2d3748;
 }
 
 .text-gray-500 {
-  color: #6b7280;
-  /* Standard gray for 'Read' */
+  color: #718096;
+}
+
+.text-gray-600 {
+  color: #4a5568;
+}
+
+.text-blue-600 {
+  color: #3182ce;
+}
+
+.text-blue-600:hover {
+  color: #2b6cb0;
 }
 
 .podcast-card {
@@ -2164,11 +2152,6 @@ img.sajid {
 .hover\:text-blue-800:hover {
   --tw-text-opacity: 1;
   color: rgb(30 64 175 / var(--tw-text-opacity));
-}
-
-.hover\:text-gray-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
