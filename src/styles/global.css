@@ -344,19 +344,14 @@ img.sajid {
 }
 
 .merch-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-}
-
-.merch-card:hover {
-  transform: translateY(-5px); /* Hover effect to lift the card */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
+  /* Removed all transitions and hover effects */
 }
 
 .cover-container {
   width: 100%;
   height: auto;
-  padding: 10px; /* Adds padding around the image */
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,10 +360,10 @@ img.sajid {
 
 .merch-cover {
   width: 100%;
-  max-width: 300px; /* Ensures the image does not exceed the desired width */
-  height: auto; /* Adjusts the height automatically to maintain the aspect ratio */
-  object-fit: contain; /* Ensures the entire image is visible without cropping */
-  border-radius: 8px; /* Optional: Adds rounded corners */
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
   display: block;
 }
 
@@ -382,14 +377,14 @@ img.sajid {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-size: 0.875rem;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
+  transition: none; /* Disable transition to prevent flickering */
 }
 
 .cover-container:hover .overlay-text {
-  opacity: 1; /* Show overlay text on hover */
+  opacity: 1;
 }
 
 .lightbox {
@@ -397,11 +392,9 @@ img.sajid {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.75);
-  z-index: 50; /* Higher z-index to ensure it appears above other content */
-  cursor: pointer; /* Makes it clear that clicking will close the lightbox */
+  z-index: 50;
+  cursor: pointer;
+  /* Ensure no transitions */
 }
-
-
-
 
 

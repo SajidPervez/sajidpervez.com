@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 
 export default function MerchCard({ name, description, cover, purchaseLinks }) {
-  // State to manage lightbox visibility
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  // Function to handle image click to open the lightbox
   const handleImageClick = () => {
+    console.log("Image clicked");
     setIsLightboxOpen(true);
   };
 
-  // Function to close the lightbox
   const closeLightbox = (event) => {
-    // Prevent click events from propagating to the image inside the lightbox
+    console.log("Close lightbox event triggered");
     if (event.target.tagName !== 'IMG') {
       setIsLightboxOpen(false);
     }
@@ -23,21 +21,21 @@ export default function MerchCard({ name, description, cover, purchaseLinks }) {
       {isLightboxOpen && (
         <div
           className="lightbox fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-          onClick={closeLightbox} // Close lightbox when clicking outside the image
+          onClick={closeLightbox}
         >
           <img
             src={cover}
             alt={`Enlarged ${name}`}
-            className="max-w-full max-h-full"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image itself
+            className="max-w-full max-h-full pointer-events-none" /* Ensure no pointer events on image */
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
 
       {/* Merch Cover */}
       <div
-        className="cover-container mb-4 overflow-hidden rounded-md shadow-sm relative cursor-pointer"
-        onClick={handleImageClick} // Handle click event on the cover container
+        className="cover-container mb-4 overflow-hidden rounded-md shadow-sm relative"
+        onClick={handleImageClick}
       >
         <img src={cover} alt={`Image of ${name}`} className="merch-cover" />
         {/* Overlay Text */}

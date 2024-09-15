@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import preact from "@astrojs/preact";
+//import preact from "@astrojs/preact";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel/serverless";
@@ -19,9 +19,7 @@ export default defineConfig({
     remarkPlugins: [],
     rehypePlugins: []
   },
-  integrations: [preact({
-    compat: true
-  }), icon(), mdx(), react(), tailwind()],
+  integrations: [icon(), mdx(), react(), tailwind()],
   output: "server",
   adapter: vercel()
 });
