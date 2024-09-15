@@ -1,9 +1,7 @@
 ---
-
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import Cards from '../components/Cards.astro';
-import FavoriteBooks from '@/components/FavoriteBooks.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('blog');
@@ -13,12 +11,14 @@ const heroHeading = "I write on cyber topics that I like and work on to learn & 
 const subtitle1 = "Write code (when required), tinker with Gen AI tools, read books but listen alot, and play badminton.";
 const subtitle2 = "Leading the change in product security covering all aspects of AppSec @ ";
 const currentEmployerLink = "https://www.myob.com";
-
 ---
+
 <BaseLayout title={pageTitle}>
-    <HeroSection title={heroHeading} subtitle1={subtitle1} subtitle2={subtitle2} link={currentEmployerLink}/>
-        <h1 class="text-4xl font-bold mb-6">My Recent Posts</h1>
+    <HeroSection title={heroHeading} subtitle1={subtitle1} subtitle2={subtitle2} link={currentEmployerLink} />
+    
+    <!-- Main content section -->
+    <section class="px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-6">My Recent Posts</h1>
         <Cards/>
-       
     </section>
 </BaseLayout>

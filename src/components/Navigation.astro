@@ -1,81 +1,143 @@
 ---
-import {Icon} from 'astro-icon/components';
+import { Icon } from 'astro-icon/components';
 const props = Astro.props;
 ---
-<header class="relative z-20">
-  <div class="flex w-full max-w-7xl mx-auto px-4 py-4">
-    <div class="flex justify-between items-center w-full max-w-7xl px-4 mx-auto py-4">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <div class="text-gray-700 font-bold text-2xl px-4 py-2 hover:animate-blink">
-          <span>
-            <a  
-            href="/" class="no-underline"> <span><img src="/favicon-beige.png" alt="Sajid." width=70em height=70em /></span>
-          </a>
-          </span>
-          
-        </div>
+
+<header class="relative z-20 bg-white shadow-md">
+  <div class="flex w-full max-w-7xl mx-auto px-4 py-4 items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/" class="no-underline flex items-center">
+        <img src="/favicon-beige.png" alt="Sajid." width="70em" height="70em" />
+      </a>
+    </div>
+
+    <!-- Hamburger Button for Mobile -->
+    <button
+      id="menu-toggle"
+      class="sm:hidden text-gray-700 focus:outline-none"
+      aria-label="Toggle navigation"
+    >
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Menu Items -->
+    <div
+      id="menu"
+      class="hidden sm:flex flex-col sm:flex-row sm:ml-auto space-y-4 sm:space-y-0 sm:space-x-4 items-center w-full sm:w-auto"
+    >
+      <!-- All Menu Options for Mobile -->
+      <div class="sm:hidden flex flex-col items-start w-full">
+        <a href="/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Home</a>
+        <a href="/blog/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Essays</a>
+        <a href="/books/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Reading Corner</a>
+        <a href="/podcasts/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Listening</a>
+        <a href="/merch/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Cyber Merch</a>
+        <a href="/about/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">About</a>
       </div>
 
-      <!-- Menu with Text and Dropdown -->
-      <div class="ml-auto">
-        <nav>
-          <ul class="flex space-x-4 items-center">
-            <!-- The Core with Dropdown -->
-            <li class="relative group">
-              <button  
-                class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 flex items-center"
-                id="core-button"
-              >
-                The Core
-                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-                
-              </button>
-              <!-- Dropdown Menu -->
-              <ul id="dropdown" class="hidden absolute left-0 mt-2 w-48 z-30 bg-white border rounded-lg shadow-lg">
-                <li>
-                  <a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Essays</a>
-                </li>
-                <li>
-                  <a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Reading Corner</a>
-                </li>
-                <li>
-                  <a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Listening</a>
-                </li>
-                <li>
-                  <a href="/merch/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Cyber Merch</a>
-                </li>
-              </ul>
-            </li>
-            <!-- About -->
-            <li>
-              <a href="/about/" class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700">
-                About
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <!-- The Core with Dropdown for Desktop -->
+      <div class="relative hidden sm:inline-block">
+        <button
+          class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 flex items-center"
+          id="core-button"
+        >
+          The Core
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ml-1 h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <!-- Dropdown Menu for Desktop -->
+        <ul
+          id="dropdown"
+          class="absolute left-0 mt-2 w-48 z-30 bg-white border rounded-lg shadow-lg hidden"
+        >
+          <li>
+            <a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Essays</a>
+          </li>
+          <li>
+            <a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Reading Corner</a>
+          </li>
+          <li>
+            <a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Listening</a>
+          </li>
+          <li>
+            <a href="/merch/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Cyber Merch</a>
+          </li>
+        </ul>
       </div>
+
+      <!-- About Link for Desktop -->
+      <a href="/about/" class="hidden sm:block hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700">
+        About
+      </a>
     </div>
   </div>
 </header>
 
 <script>
-    const coreButton = document.getElementById('core-button');
-    const dropdown = document.getElementById('dropdown');
-  
-    // Toggle dropdown on button click
-    coreButton.addEventListener('click', function() {
-      dropdown.classList.toggle('hidden');
-    });
-  
-    // Close dropdown when clicking outside, but not when clicking inside dropdown
-    document.addEventListener('click', function(e) {
-      const isClickInside = coreButton.contains(e.target) || dropdown.contains(e.target);
-      if (!isClickInside) {
+  // Toggle the mobile menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  const coreButton = document.getElementById('core-button');
+  const dropdown = document.getElementById('dropdown');
+
+  menuToggle.addEventListener('click', function () {
+    menu.classList.toggle('hidden');
+  });
+
+  // Show dropdown on hover for desktop
+  coreButton.addEventListener('mouseenter', function () {
+    dropdown.classList.remove('hidden');
+  });
+
+  // Keep the dropdown open when hovering over it
+  dropdown.addEventListener('mouseenter', function () {
+    dropdown.classList.remove('hidden');
+  });
+
+  // Hide dropdown when the mouse leaves both the button and the dropdown
+  coreButton.addEventListener('mouseleave', function () {
+    setTimeout(() => {
+      if (!dropdown.matches(':hover')) {
         dropdown.classList.add('hidden');
       }
-    });
-  </script>
+    }, 100);
+  });
+
+  dropdown.addEventListener('mouseleave', function () {
+    dropdown.classList.add('hidden');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (e) {
+    const isClickInside = coreButton.contains(e.target) || dropdown.contains(e.target);
+    if (!isClickInside) {
+      dropdown.classList.add('hidden');
+    }
+  });
+</script>
