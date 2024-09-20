@@ -398,4 +398,95 @@ img.sajid {
   /* Ensure no transitions */
 }
 
+/* Timeline Container */
+.experience-timeline {
+  position: relative;
+  padding-left: 2rem; /* Space for the year and line on desktop */
+  max-width: 1200px; /* Control the width on larger screens */
+  margin-left: 2rem; /* Align the timeline to the left */
+}
 
+/* Experience Item: Base Styling */
+.experience-item {
+  display: flex;
+  align-items: left;
+  justify-content: flex-start; /* Align items to the left */
+  margin-bottom: 2rem;
+  min-height: 100px;
+  overflow: visible; /* Ensure content is not clipped */
+  position: relative;
+  padding-left: 0; /* Ensure the card aligns to the left */
+}
+
+/* Card Styling */
+.experience-card {
+  display: block;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */ /* Simple shadow for the card */
+  width: 100%;
+  /* max-width: 800px; *//* Max width for larger displays */
+  text-align: left; /* Ensure text aligns left within the card */
+  margin-left: 2rem; /* Align the card to the left with space */
+}
+
+/* Vertical Line Connecting the Years */
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: -1rem; /* Adjust position to move the line further from the year */
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Line thickness */
+  background-color: #ddd; /* Line color */
+}
+
+/* Dot for Each Year */
+.year-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #555; /* Dot color */
+  border-radius: 50%; /* Make it a circle */
+  margin-right: 0.5rem; /* Space between dot and year */
+}
+
+/* Year Container */
+.year-container {
+  display: flex;
+  align-items: center; /* Align year and dot in a row */
+  justify-content: flex-start; /* Align year and dot to the left */
+  margin-bottom: 1rem;
+}
+
+/* Mobile Styling: Remove Dot and Adjust Centering */
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the content */
+    justify-content: center; /* Ensure everything is centered */
+    padding-left: 0; /* Remove padding */
+  }
+
+  /* Hide the vertical line for mobile screens */
+  .experience-item::before {
+    display: none; /* Remove the vertical line on mobile */
+  }
+
+  .year-dot {
+    display: none; /* Remove dot on mobile */
+  }
+
+  .year-container {
+    justify-content: center; /* Center the year on mobile */
+    align-items: center; /* Center the year horizontally */
+    margin-bottom: 0.25rem; /* Reduce space between the year and card */
+    margin-left: 0; /* Ensure the year is centered properly */
+  }
+
+  .experience-card {
+    width: 100%; /* Full width for mobile screens */
+    max-width: 400px; /* Ensure the card is not too wide */
+    text-align: left; /* Align text inside the card to the left */
+    margin: 0 auto; /* Ensure the card is centered horizontally */
+  }
+}

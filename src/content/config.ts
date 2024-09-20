@@ -66,10 +66,27 @@ const merchCollection = defineCollection({
   }),
 });
 
+
+// Define a collection schema for experiences items
+const experiencesCollection = defineCollection({
+      type: "content",
+      schema: z.object({
+        title: z.string(),
+        organization: z.string(),
+        startDate: z.string(),
+        endDate: z.string(),
+        period: z.string(),
+        description: z.string(),
+        cover: z.string(),
+        url: z.string().url(),
+      }),
+  });
+
 export const collections = {
   'blog': blogCollection,
   'authors': authorCollection,
   'books': booksCollection,
   'podcasts': podcastsCollection,
   'merch': merchCollection,
+  'experiences': experiencesCollection,
 };
