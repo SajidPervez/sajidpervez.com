@@ -430,7 +430,7 @@ img.sajid {
   margin-left: 2rem; /* Align the card to the left with space */
 }
 
-/* Vertical Line Connecting the Years */
+/* Vertical Line Connecting the Years */    
 .experience-item::before {
   content: '';
   position: absolute;
