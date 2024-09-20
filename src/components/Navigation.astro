@@ -1,11 +1,6 @@
----
-import { Icon } from 'astro-icon/components';
-const props = Astro.props;
----
-
 <header class="relative z-20 bg-white shadow-md">
-  <div class="flex w-full max-w-7xl mx-auto px-4 py-4 items-center justify-between">
-    <!-- Logo -->
+  <div class="flex w-full px-4 py-4 items-center justify-between">
+    <!-- Logo aligned to the left -->
     <div class="flex items-center">
       <a href="/" class="no-underline flex items-center">
         <img src="/favicon-beige.png" alt="Sajid." width="70em" height="70em" />
@@ -19,6 +14,7 @@ const props = Astro.props;
       aria-label="Toggle navigation"
     >
       <svg
+        id="menu-icon"
         class="h-6 w-6"
         fill="none"
         stroke="currentColor"
@@ -32,12 +28,27 @@ const props = Astro.props;
           d="M4 6h16M4 12h16m-7 6h7"
         ></path>
       </svg>
+      <svg
+        id="close-icon"
+        class="h-6 w-6 hidden"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
     </button>
 
-    <!-- Menu Items -->
+    <!-- Menu Items aligned to the right -->
     <div
       id="menu"
-      class="hidden sm:flex flex-col sm:flex-row sm:ml-auto space-y-4 sm:space-y-0 sm:space-x-4 items-center w-full sm:w-auto"
+      class="hidden sm:flex flex-col sm:flex-row ml-auto space-y-4 sm:space-y-0 sm:space-x-4 items-center w-full sm:w-auto"
     >
       <!-- All Menu Options for Mobile -->
       <div class="sm:hidden flex flex-col items-start w-full">
@@ -100,17 +111,22 @@ const props = Astro.props;
 </header>
 
 <script>
-  // Toggle the mobile menu
+  // Toggle the mobile menu and switch between hamburger and close icon
   const menuToggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
-  const coreButton = document.getElementById('core-button');
-  const dropdown = document.getElementById('dropdown');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
 
   menuToggle.addEventListener('click', function () {
     menu.classList.toggle('hidden');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
   });
 
-  // Show dropdown on hover for desktop
+  // Dropdown functionality for desktop
+  const coreButton = document.getElementById('core-button');
+  const dropdown = document.getElementById('dropdown');
+
   coreButton.addEventListener('mouseenter', function () {
     dropdown.classList.remove('hidden');
   });
