@@ -19,22 +19,14 @@ My career is at an intersection of various skill sets from *appsec*, , *cloudsec
 
 Titles keep changing but my work revolves around finding ways to solve software security puzzles and figuring solution for every design flaw and coding bugs.
 
-I am **Principal Security Engineer** at **[MYOB](https://myob.com)**, a SaaS accounting software company supporting all types of businesses.
-
-Before that I was **Application Security Lead** at **[NBN](https://nbnco.com.au)**, a national broadband network compnay that is the digital backbone of Australia and is constantly evolving to keep communities and businesses connected.
-
-Before NBN, I was **Senior Application Security Engineer** at **[AGL](https://agl.com.au)**, one of the largest Australian energy and telecom company. 
-
-Even before that, I was **Secure Code Consultant** at **[Telstra](https://telstra.com.au)**, an Australian telecommunications company that builds and operates telecommunications networks and markets related products and services.
-
-And the final bit of this part ends where I started my career in Australia. It was mostly writing code and doing **PCI-DSS** and **PA-DSS** audits - became a **PCI QSA**.
+I am currently a **Principal Product Security Engineer** at **[MYOB](https://myob.com)**, a SaaS accounting software company supporting all types of businesses.
 
 # <img src="/2-dots.png" alt="Icon" width="20" height="20" style="display: inline-block; vertical-align: middle; margin-right: 6px; margin-top: 0px; margin-bottom: 0px;"> A bit of history 
 I am originally from Pakistan and immigrated to Australia in 2015.
 
-I have earned an undergraduate and masters degrees in Computer Sciences and started my career has a developer writing code for cryptographic solutions and integrating PKI and 2FA into enterprise environments. Some more fun parts of the job involved breaking applications.
+I started my career in **2005** as **a developer** writing code for cryptographic solutions (PKI) and integrating PKI and 2FA based strong authentication solutionss into enterprise environments. Some more fun parts of the job involved breaking applications.
 
-Thats all my friend, lets hope to meet or speak sometime.
+Below is a my cyber career journey in Australia.
 
 
 

@@ -1176,6 +1176,10 @@ video {
   margin-left: 0.25rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .mr-6 {
   margin-right: 1.5rem;
 }
@@ -1190,10 +1194,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-auto {
-  margin-left: auto;
 }
 
 .block {
@@ -1220,6 +1220,10 @@ video {
   height: 0.125rem;
 }
 
+.h-24 {
+  height: 6rem;
+}
+
 .h-36 {
   height: 9rem;
 }
@@ -1244,8 +1248,16 @@ video {
   height: auto;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .max-h-full {
   max-height: 100%;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-4 {
@@ -1644,6 +1656,10 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @font-face {
@@ -2123,7 +2139,8 @@ img.sajid {
 
 .experience-item {
   display: flex;
-  align-items: left;
+  align-items: flex-start;
+  /* Ensure items align to the top */
   justify-content: flex-start;
   /* Align items to the left */
   margin-bottom: 2rem;
@@ -2133,23 +2150,73 @@ img.sajid {
   position: relative;
   padding-left: 0;
   /* Ensure the card aligns to the left */
+  transition: all 0.3s ease;
+  /* Add smooth transition for hover effect */
 }
 
 /* Card Styling */
 
 .experience-card {
-  display: block;
-  padding: 1rem;
+  display: flex;
+  /* Use flex to align image and content horizontally */
+  align-items: center;
+  /* Vertically center the image and content */
+  padding: 0;
+  /* Remove padding to integrate the image tightly */
   border-radius: 0.5rem;
-  /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   /* Simple shadow for the card */
   width: 100%;
-  /* max-width: 800px; */
-  /* Max width for larger displays */
   text-align: left;
   /* Ensure text aligns left within the card */
   margin-left: 2rem;
   /* Align the card to the left with space */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: scale(1.02);
+  /* Slight zoom effect on hover */
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+  /* Increase shadow on hover */
+}
+
+/* Adding image to the left of the card */
+
+.experience-image {
+  flex-shrink: 0;
+  /* Prevent image from shrinking */
+  width: 150px;
+  /* Set the width of the image */
+  height: 100%;
+  /* Match the height of the content */
+  border-top-left-radius: 0.5rem;
+  /* Match the top-left corner with card */
+  border-bottom-left-radius: 0.5rem;
+  /* Match the bottom-left corner with card */
+  overflow: hidden;
+  /* Ensure the image is clipped within the container */
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Ensure the image covers the entire container */
+  display: block;
+  /* Ensure the image is displayed as a block element */
+}
+
+/* Content Section of the Card */
+
+.experience-content {
+  padding: 1rem;
+  /* Add padding to the content section */
+  background-color: white;
+  border-radius: 0.5rem;
+  flex: 1;
+  /* Allow the content section to take up remaining space */
 }
 
 /* Vertical Line Connecting the Years */
@@ -2189,6 +2256,18 @@ img.sajid {
   justify-content: flex-start;
   /* Align year and dot to the left */
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.year-container .text-2xl {
+  color: #333;
+  /* Default year color */
+}
+
+.experience-item:hover .year-container .text-2xl {
+  color: #ff7f00 !important;
+  /* Orange color on hover */
 }
 
 /* Mobile Styling: Remove Dot and Adjust Centering */
@@ -2229,6 +2308,8 @@ img.sajid {
   }
 
   .experience-card {
+    flex-direction: column;
+    /* Stack image and content vertically on mobile */
     width: 100%;
     /* Full width for mobile screens */
     max-width: 400px;
@@ -2237,6 +2318,17 @@ img.sajid {
     /* Align text inside the card to the left */
     margin: 0 auto;
     /* Ensure the card is centered horizontally */
+  }
+
+  .experience-image {
+    width: 100%;
+    /* Make the image full width on mobile */
+    height: auto;
+    /* Adjust height to maintain aspect ratio */
+    margin-right: 0;
+    /* Remove right margin */
+    margin-bottom: 1rem;
+    /* Add space below the image */
   }
 }
 
@@ -2289,6 +2381,12 @@ img.sajid {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2322,10 +2420,6 @@ img.sajid {
 }
 
 @media (min-width: 640px) {
-  .sm\:ml-auto {
-    margin-left: auto;
-  }
-
   .sm\:block {
     display: block;
   }
