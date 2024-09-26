@@ -1,9 +1,9 @@
-<header class="relative z-20 bg-white shadow-md">
+<header class="relative z-20">
   <div class="flex w-full px-4 py-4 items-center justify-between">
     <!-- Logo aligned to the left -->
     <div class="flex items-center">
       <a href="/" class="no-underline flex items-center">
-        <img src="/favicon-beige.png" alt="Sajid." width="70em" height="70em" />
+        <img src="/favicon-beige.png" alt="Sajid." width="50em" height="50em" />
       </a>
     </div>
 
@@ -28,36 +28,43 @@
           d="M4 6h16M4 12h16m-7 6h7"
         ></path>
       </svg>
-      <svg
-        id="close-icon"
-        class="h-6 w-6 hidden"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
     </button>
 
     <!-- Menu Items aligned to the right -->
     <div
       id="menu"
-      class="hidden sm:flex flex-col sm:flex-row ml-auto space-y-4 sm:space-y-0 sm:space-x-4 items-center w-full sm:w-auto"
+      class="hidden sm:flex flex-col sm:flex-row ml-auto space-y-4 sm:space-y-0 sm:space-x-4 items-center w-full sm:w-auto text-sm"
     >
       <!-- All Menu Options for Mobile -->
-      <div class="sm:hidden flex flex-col items-start w-full">
-        <a href="/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Home</a>
-        <a href="/blog/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Essays</a>
-        <a href="/books/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Reading Corner</a>
-        <a href="/podcasts/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Listening</a>
-        <a href="/merch/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">Cyber Merch</a>
-        <a href="/about/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200">About</a>
+      <div class="sm:hidden flex flex-col items-start w-full px-4 py-4 relative">
+        <!-- Close Button at the top right corner -->
+        <button
+          id="menu-close"
+          class="absolute top-4 right-4 text-gray-700 focus:outline-none"
+          aria-label="Close navigation"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <!-- Menu Links -->
+        <a href="/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Home</a>
+        <a href="/blog/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Essays</a>
+        <a href="/books/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Reading Corner</a>
+        <a href="/podcasts/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Listening</a>
+        <a href="/merch/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Cyber Merch</a>
+        <a href="/about/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">About</a>
       </div>
 
       <!-- The Core with Dropdown for Desktop -->
@@ -88,22 +95,22 @@
           class="absolute left-0 mt-2 w-48 z-30 bg-white border rounded-lg shadow-lg hidden"
         >
           <li>
-            <a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Essays</a>
+            <a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Essays</a>
           </li>
           <li>
-            <a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Reading Corner</a>
+            <a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Reading Corner</a>
           </li>
           <li>
-            <a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Listening</a>
+            <a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Listening</a>
           </li>
           <li>
-            <a href="/merch/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700">Cyber Merch</a>
+            <a href="/merch/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Cyber Merch</a>
           </li>
         </ul>
       </div>
 
       <!-- About Link for Desktop -->
-      <a href="/about/" class="hidden sm:block hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700">
+      <a href="/about/" class="hidden sm:block hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 text-sm">
         About
       </a>
     </div>
@@ -115,12 +122,16 @@
   const menuToggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
   const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
+  const closeIcon = document.getElementById('menu-close');
 
   menuToggle.addEventListener('click', function () {
     menu.classList.toggle('hidden');
     menuIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
+  });
+
+  closeIcon.addEventListener('click', function () {
+    menu.classList.add('hidden');
+    menuIcon.classList.remove('hidden');
   });
 
   // Dropdown functionality for desktop

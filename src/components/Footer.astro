@@ -15,31 +15,8 @@ import { Icon } from 'astro-icon';
       >
         Subscribe via RSS
       </a>
-    </div>
 
-    <!-- Right: Page Links & Social Links, aligned on the right -->
-    <div class="flex flex-col items-start md:items-end justify-center space-y-4">
-      <!-- Page Links -->
-      <div class="text-left space-y-4">
-        <a href="/" class="block text-gray-700 transition relative group">
-          Home
-          <span class="absolute left-0 bottom-0 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-        </a>
-        <a href="/about/" class="block text-gray-700 transition relative group">
-          About
-          <span class="absolute left-0 bottom-0 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-        </a>
-        <a href="/blog/" class="block text-gray-700 transition relative group">
-          Blog
-          <span class="absolute left-0 bottom-0 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-        </a>
-        <a href="/tags/" class="block text-gray-700 transition relative group">
-          Tags
-          <span class="absolute left-0 bottom-0 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-        </a>
-      </div>
-
-      <!-- Social Links below Page Links -->
+      <!-- Social Links below RSS Button -->
       <div class="flex space-x-6 mt-4">
         <!-- Twitter -->
         <a 
@@ -75,11 +52,11 @@ import { Icon } from 'astro-icon';
 
         <!-- GitHub -->
         <a 
-        href="https://github.com/SajidPervez" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="text-gray-800 hover:text-gray-600 transition no-underline"
-        aria-label="GitHub"
+          href="https://github.com/SajidPervez" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-gray-800 hover:text-gray-600 transition no-underline"
+          aria-label="GitHub"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.2c-3.338.726-4.042-1.612-4.042-1.612-.546-1.387-1.333-1.758-1.333-1.758-1.089-.746.083-.73.083-.73 1.205.086 1.84 1.238 1.84 1.238 1.07 1.834 2.805 1.304 3.492.997.107-.775.42-1.303.762-1.602-2.664-.303-5.466-1.33-5.466-5.926 0-1.308.467-2.38 1.235-3.222-.123-.303-.535-1.523.118-3.176 0 0 1.008-.323 3.3 1.23.957-.267 1.98-.4 3-.405 1.02.006 2.043.138 3 .405 2.292-1.553 3.3-1.23 3.3-1.23.653 1.653.241 2.873.118 3.176.768.842 1.235 1.914 1.235 3.222 0 4.608-2.805 5.62-5.475 5.92.432.37.822 1.104.822 2.227v3.301c0 .319.192.692.8.574C20.565 21.798 24 17.302 24 12c0-6.627-5.372-12-12-12z"/>
@@ -87,5 +64,27 @@ import { Icon } from 'astro-icon';
         </a>
       </div>
     </div>
+
+    <div class="page-links-container grid grid-cols-2 gap-4 block">
+      <!-- First Column of Page Links -->
+      <div class="text-left space-y-4">
+        <a href="/" >Home</a>
+        <a href="/about/" >About</a>
+        <a href="/blog/" >Blog</a>
+        <a href="/tags/" >Tags</a>
+      </div>
+    
+      <!-- Second Column of Page Links -->
+      <div class="text-left space-y-4">
+        <a href="/books/" >Reading Corner</a>
+        <a href="/podcasts/" >Listening Corner</a>
+        <a href="/merch/" >Cyber Merch</a>
+      </div>
+    </div>
+     
+
+    
+    
   </div>
+  
 </footer>
