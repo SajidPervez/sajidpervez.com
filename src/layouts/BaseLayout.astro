@@ -4,10 +4,12 @@ const { title, subtitle, backgroundImage } = Astro.props;
 
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <html lang="en">
   <head>
+    <ViewTransitions/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon-beige.png" sizes="32x32" type="image/png" />
@@ -21,7 +23,7 @@ import Header from '../components/Header.astro';
     <main class="container w-full max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
       <slot />
     </main>    
-
+    
     <!-- Footer -->
     <Footer />
   </body>
