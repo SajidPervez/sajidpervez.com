@@ -3,10 +3,12 @@ import { Image } from 'astro:assets';
 import { getCollection } from "astro:content";
 const blogPosts = await getCollection("blog");
 
+// Filter blog posts where isDraft is false
+const publishedPosts = blogPosts.filter((post) => post.data.isDraft === false);
 ---
 
 <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-4 mb-4">
-  {blogPosts.map((post) => (
+  {publishedPosts.map((post) => (
     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-200">
       <Image src={post.data.cover} alt={post.data.altText} class="w-full h-36 object-cover" />
       <div class="p-4">
@@ -21,8 +23,3 @@ const blogPosts = await getCollection("blog");
     </div>
   ))}
 </div>
-
-
-
-
-
