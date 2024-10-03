@@ -6,7 +6,7 @@ description: "After learning some Astro, I couldn't stop!"
 cover: "../images/post-1-cover.jpg"
 altText: "2nd blog image"
 pubDate: 08-09-2023
-isDraft: false
+isDraft: true
 tags: ["astro", "blogging", "learning in public", "successes"]
 canonicalURL: "https://localhost:4321/blog/post-2"
 ---

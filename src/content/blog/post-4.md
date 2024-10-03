@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: My Fourth Blog Post
 author: Astro Learner
 description: "This post will show up on its own!"
-isDraft: false
+isDraft: true
 cover: "../images/post-1-cover.jpg"
 altText: "The word astro against an illustration of planets and stars."
 pubDate: "2022-08-08"
