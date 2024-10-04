@@ -9,11 +9,15 @@ const publishedPosts = blogPosts.filter((post) => post.data.isDraft === false);
 
 <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-4 mb-4">
   {publishedPosts.map((post) => (
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 duration-200">
-      <Image src={post.data.cover} alt={post.data.altText} class="w-full h-36 object-cover" />
+    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden ">
+      <div class="blog-cover-container">
+        <Image src={post.data.cover} alt={post.data.altText} class="blog-cover" />
+      </div>
       <div class="p-4">
         <h2 class="text-l font-bold mb-2">
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+          <a href={`/blog/${post.slug}`} class="block hover:text-orange-700 no-underline">
+            {post.data.title}
+          </a>
         </h2>
         <span>
           <h5 class="font-medium text-gray-700">{post.data.author}</h5>
@@ -21,5 +25,6 @@ const publishedPosts = blogPosts.filter((post) => post.data.isDraft === false);
         </span>
       </div>
     </div>
+
   ))}
 </div>

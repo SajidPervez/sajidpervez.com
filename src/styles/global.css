@@ -540,5 +540,54 @@ img.sajid {
   display: none; /* Disable global hover effect */
 }
 
+/* card-link is for blog cards */
+
+.card-link {
+  color: inherit; /* Default text color */
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.card-link:hover {
+  color: rgb(219, 74, 41); /* Change text color to orange on hover */
+  text-decoration: none !important; /* Ensure no underline on hover */
+}
+
+
+/* Blog card smooth transition */
+/* Blog card smooth transition with wider layout */
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 650px; /* Make blog cards wider */
+  width: 100%; /* Ensure the card takes up full width in grid layouts */
+}
+
+.blog-card:hover {
+  transform: translateY(-5px) scale(1.02); /* Slight scale and lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on hover */
+}
+
+/* Container for the blog cover image */
+.blog-cover-container {
+  width: 100%;
+  height: auto;
+  padding: 10px; /* Adds padding around the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blog cover image style */
+.blog-cover {
+  width: 100%;
+  max-width: 450px; /* Ensures the blog image maintains its wider width */
+  height: auto; /* Adjusts height automatically to maintain the aspect ratio */
+  object-fit: contain; /* Ensures the entire image is visible without cropping */
+  border-radius: 8px; /* Adds rounded corners */
+  display: block;
+}
+
+
+
 
 

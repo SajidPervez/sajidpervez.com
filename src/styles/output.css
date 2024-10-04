@@ -1180,10 +1180,6 @@ video {
   margin-bottom: 1.5rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -1192,20 +1188,12 @@ video {
   margin-left: auto;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .mt-8 {
@@ -1234,10 +1222,6 @@ video {
 
 .h-24 {
   height: 6rem;
-}
-
-.h-36 {
-  height: 9rem;
 }
 
 .h-4 {
@@ -1344,6 +1328,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-0 {
+  gap: 0px;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -1356,18 +1344,16 @@ video {
   gap: 2rem;
 }
 
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-0 {
-  gap: 0px;
-}
-
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -1380,18 +1366,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden {
@@ -1447,19 +1421,14 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.bg-gray-600 {
+.bg-orange-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-orange-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1695,10 +1664,6 @@ video {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.duration-200 {
-  transition-duration: 200ms;
 }
 
 .duration-300 {
@@ -2349,6 +2314,71 @@ img.sajid {
   /* Disable global hover effect */
 }
 
+/* card-link is for blog cards */
+
+.card-link {
+  color: inherit;
+  /* Default text color */
+  text-decoration: none;
+  /* Remove default underline */
+  transition: color 0.3s ease;
+  /* Smooth transition for color change */
+}
+
+.card-link:hover {
+  color: rgb(219, 74, 41);
+  /* Change text color to orange on hover */
+  text-decoration: none !important;
+  /* Ensure no underline on hover */
+}
+
+/* Blog card smooth transition */
+
+/* Blog card smooth transition with wider layout */
+
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 650px;
+  /* Make blog cards wider */
+  width: 100%;
+  /* Ensure the card takes up full width in grid layouts */
+}
+
+.blog-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  /* Slight scale and lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* Adds a subtle shadow on hover */
+}
+
+/* Container for the blog cover image */
+
+.blog-cover-container {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  /* Adds padding around the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Blog cover image style */
+
+.blog-cover {
+  width: 100%;
+  max-width: 450px;
+  /* Ensures the blog image maintains its wider width */
+  height: auto;
+  /* Adjusts height automatically to maintain the aspect ratio */
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* Ensures the entire image is visible without cropping */
+  border-radius: 8px;
+  /* Adds rounded corners */
+  display: block;
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
@@ -2383,14 +2413,14 @@ img.sajid {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-orange-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-orange-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-orange-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 65 12 / var(--tw-bg-opacity));
 }
 
 .hover\:text-blue-700:hover {
@@ -2403,14 +2433,14 @@ img.sajid {
   color: rgb(30 64 175 / var(--tw-text-opacity));
 }
 
-.hover\:text-gray-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
 .hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.hover\:text-orange-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(194 65 12 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-lg:hover {
@@ -2517,10 +2547,6 @@ img.sajid {
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
-  .md\:text-right {
-    text-align: right;
-  }
-
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -2592,6 +2618,8 @@ img.sajid {
     line-height: 1.75rem;
   }
 }
+
+
 
 
 
