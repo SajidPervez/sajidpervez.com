@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: My Second Blog Post
 author: Astro Learner
 description: "After learning some Astro, I couldn't stop!"
-cover: "../images/post-1-cover.jpg"
+cover: "/public/blog-images/vulnerabilities-universe.jpg"
 altText: "2nd blog image"
 pubDate: 08-09-2023
 isDraft: true
