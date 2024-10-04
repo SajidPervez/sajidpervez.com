@@ -1,54 +1,63 @@
 ---
-// Import necessary components
 import BaseLayout from "./BaseLayout.astro";
 import Prose from "../components/Prose.astro";
 import TOC from '../components/TOC.astro';
 
-// Extract the props
 const { frontmatter, content: { title }, headings, Content } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.pageTitle}>
   <header>
-    <img src={frontmatter.cover} alt={frontmatter.altText} width="600" height="600"/>
-    <h1 class="text-3xl font-bold">{frontmatter.title}</h1>
-    <p class="text-gray-500">
+    <!-- Title always at the top -->
+    <h1 class="text-3xl font-bold text-center lg:text-left mb-4 prose">{frontmatter.title}</h1>
+    <!-- Author and publish date -->
+    <p class="text-gray-500 text-center lg:text-left mb-2">
       By {frontmatter.author} on {frontmatter.pubDate.toString()}
     </p>
-    <div class="tags">
+
+    <!-- Cover image -->
+    <img 
+      src={frontmatter.cover} 
+      alt={frontmatter.altText} 
+      class="w-full h-auto lg:w-[600px] lg:h-[600px] mb-4 mx-auto"
+    />
+   
+    <!-- Tags -->
+    <div class="tags text-center lg:text-left flex flex-wrap justify-center lg:justify-start gap-0">
       {frontmatter.tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
+        <p class="inline-block tag">
+          <a href={`/tags/${tag}`} class="text-blue-500 hover:text-blue-700">
+            #{tag}
+          </a>
         </p>
       ))}
     </div>
-    
+
+
   </header>
 
-  <!-- Create a responsive grid layout -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <!-- Main Content Area -->
+  <!-- Responsive layout for content and TOC -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-2">
+    <!-- TOC: Shown at the top for smaller screens, sidebar for larger screens -->
+    {headings && headings.length > 0 && (
+      <nav class="article-toc order-first lg:order-none lg:block lg:sticky lg:top-4 lg:mb-0">
+        <h2 class="font-semibold text-lg mb-2 text-center lg:text-left">Table of Content</h2>
+        <TOC headings={headings} />
+      </nav>
+    )}
+
+    <!-- Main Content Area: Spans 2 columns on large screens -->
     <div class="col-span-2">
       <Prose>
         <slot />
       </Prose>
     </div>
-
-    <!-- TOC for large screens, top for small screens -->
-    {headings && headings.length > 0 && (
-      <nav class="article-toc hidden lg:block lg:sticky lg:top-4">
-        <h2>Table of Content</h2>
-        <TOC headings={headings} />
-      </nav>
-    )}
   </div>
 </BaseLayout>
 
-
- <script>
-
+<script>
   addIntersectionObserver();
-  
+
   function addIntersectionObserver() {
     const observer = new IntersectionObserver((sections) => {
       console.log('sections', sections);
@@ -56,21 +65,20 @@ const { frontmatter, content: { title }, headings, Content } = Astro.props;
         const heading = section.target.querySelector('h2, h3, h4, h5');
         if (!heading) return;
         const id = heading.getAttribute('id');
-  
+
         // Get the link to this section's heading
         const link = document.querySelector(`nav.toc li a[href="#${id}"]`);
         if (!link) return;
-  
+
         // Add/remove the .active class based on whether the
         // section is visible
         const addRemove = section.intersectionRatio > 0 ? 'add' : 'remove';
         link.classList[addRemove]('active');
       });
     });
-  
+
     document.querySelectorAll('.article-content section').forEach((section) => {
       observer.observe(section);
-    })
+    });
   }
-  </script>
- 
+</script>

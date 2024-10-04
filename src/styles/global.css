@@ -193,7 +193,12 @@ img.sajid {
   font-weight: bold; /* Optional: make the numbers bold */
 }
 
-.prose h1, 
+.prose h1 {
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 .prose h2 {  
     font-family: 'Lato', sans-serif;
     font-style: normal;
