@@ -2379,6 +2379,30 @@ img.sajid {
   display: block;
 }
 
+/* This is to overdie Footer buttons colors */
+
+/* Global button styles */
+
+.btn-orange {
+  background-color: rgb(219, 74, 44);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  /* Adjust the padding as needed */
+  border-radius: 0.375rem;
+  /* Slightly rounded corners */
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the orange button */
+
+.btn-orange:hover {
+  background-color: rgb(189, 60, 36);
+  /* Slightly darker shade on hover */
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
@@ -2411,11 +2435,6 @@ img.sajid {
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-orange-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-orange-700:hover {
@@ -2618,8 +2637,6 @@ img.sajid {
     line-height: 1.75rem;
   }
 }
-
-
 
 
 
