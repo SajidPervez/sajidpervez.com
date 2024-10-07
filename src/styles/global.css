@@ -606,5 +606,12 @@ img.sajid {
   
 }
 
+/* Custom CSS to override the padding-top of ConvertKit form */
+.formkit-form[data-uid="d20e8ab5b7"][min-width~="700"] [data-style="clean"], 
+.formkit-form[data-uid="d20e8ab5b7"][min-width~="800"] [data-style="clean"] {
+    padding-top: 10px !important; /* Override with a lower value */
+}
+
+
 
 

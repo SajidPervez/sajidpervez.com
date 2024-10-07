@@ -1362,18 +1362,14 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.rounded {
-  border-radius: 0.25rem;
 }
 
 .rounded-lg {
@@ -1419,11 +1415,6 @@ video {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.bg-orange-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -2403,6 +2394,14 @@ img.sajid {
   /* Slightly darker shade on hover */
 }
 
+/* Custom CSS to override the padding-top of ConvertKit form */
+
+.formkit-form[data-uid="d20e8ab5b7"][min-width~="700"] [data-style="clean"], 
+.formkit-form[data-uid="d20e8ab5b7"][min-width~="800"] [data-style="clean"] {
+  padding-top: 10px !important;
+  /* Override with a lower value */
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
@@ -2435,11 +2434,6 @@ img.sajid {
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-orange-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(194 65 12 / var(--tw-bg-opacity));
 }
 
 .hover\:text-blue-700:hover {
@@ -2637,6 +2631,7 @@ img.sajid {
     line-height: 1.75rem;
   }
 }
+
 
 
 
