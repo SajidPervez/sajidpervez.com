@@ -21,7 +21,7 @@ const publishedPosts = blogPosts.filter((post) => post.data.isDraft === false);
         </h2>
         <span>
           <h5 class="font-medium text-gray-700">{post.data.author}</h5>
-          <p class="text-gray-500 text-sm">Published on: {post.data.pubDate.toDateString().slice(0,10)}</p>
+          <p class="text-gray-500 text-sm">{post.data.pubDate.toDateString().slice(0,10)}</p>
         </span>
       </div>
     </div>

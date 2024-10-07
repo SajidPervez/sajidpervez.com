@@ -118,53 +118,19 @@
 </header>
 
 <script>
-  // Toggle the mobile menu and switch between hamburger and close icon
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('menu-close');
-
-  menuToggle.addEventListener('click', function () {
+  document.addEventListener('click', function (event) {
+  if (event.target.closest('#menu-toggle')) {
+    const menu = document.getElementById('menu');
+    const menuIcon = document.getElementById('menu-icon');
     menu.classList.toggle('hidden');
     menuIcon.classList.toggle('hidden');
-  });
+  }
 
-  closeIcon.addEventListener('click', function () {
-    menu.classList.add('hidden');
-    menuIcon.classList.remove('hidden');
-  });
+  if (event.target.closest('#core-button')) {
+    const dropdown = document.getElementById('dropdown');
+    dropdown.classList.toggle('hidden');
+  }
+});
 
-  // Dropdown functionality for desktop
-  const coreButton = document.getElementById('core-button');
-  const dropdown = document.getElementById('dropdown');
-
-  coreButton.addEventListener('mouseenter', function () {
-    dropdown.classList.remove('hidden');
-  });
-
-  // Keep the dropdown open when hovering over it
-  dropdown.addEventListener('mouseenter', function () {
-    dropdown.classList.remove('hidden');
-  });
-
-  // Hide dropdown when the mouse leaves both the button and the dropdown
-  coreButton.addEventListener('mouseleave', function () {
-    setTimeout(() => {
-      if (!dropdown.matches(':hover')) {
-        dropdown.classList.add('hidden');
-      }
-    }, 100);
-  });
-
-  dropdown.addEventListener('mouseleave', function () {
-    dropdown.classList.add('hidden');
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function (e) {
-    const isClickInside = coreButton.contains(e.target) || dropdown.contains(e.target);
-    if (!isClickInside) {
-      dropdown.classList.add('hidden');
-    }
-  });
 </script>
+
