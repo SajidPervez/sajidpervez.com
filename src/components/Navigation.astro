@@ -118,19 +118,41 @@
 </header>
 
 <script>
-  document.addEventListener('click', function (event) {
-  if (event.target.closest('#menu-toggle')) {
+  document.addEventListener('DOMContentLoaded', function() {
     const menu = document.getElementById('menu');
     const menuIcon = document.getElementById('menu-icon');
-    menu.classList.toggle('hidden');
-    menuIcon.classList.toggle('hidden');
-  }
-
-  if (event.target.closest('#core-button')) {
     const dropdown = document.getElementById('dropdown');
-    dropdown.classList.toggle('hidden');
-  }
-});
 
+    // Function to toggle menu visibility
+    function toggleMenu() {
+      menu?.classList.toggle('hidden');
+      menuIcon?.classList.toggle('hidden');
+    }
+
+    // Use event delegation for menu toggle, close, and other interactions
+    document.body.addEventListener('click', function(event) {
+      const target = event.target as Element;
+      
+      if (target.closest('#menu-toggle')) {
+        toggleMenu();
+      } else if (target.closest('#menu-close')) {
+        toggleMenu();
+      } else if (target.closest('#core-button')) {
+        dropdown?.classList.toggle('hidden');
+      } else if (!target.closest('#menu') && !menu?.classList.contains('hidden')) {
+        toggleMenu();
+      } else if (!target.closest('#core-button') && !dropdown?.classList.contains('hidden')) {
+        dropdown?.classList.add('hidden');
+      }
+    });
+
+    // Prevent clicks inside the menu from closing it, except for the close button
+    menu?.addEventListener('click', function(event) {
+      const target = event.target as Element;
+      if (!target.closest('#menu-close')) {
+        event.stopPropagation();
+      }
+    });
+  });
 </script>
 

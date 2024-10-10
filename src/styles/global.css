@@ -613,5 +613,27 @@ img.sajid {
 }
 
 
+/* ... existing styles ... */
 
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.tag a {
+  display: inline-block;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  text-decoration: none;
+}
+
+.tag a:hover {
+  background-color: #d1d5db;
+}
 
