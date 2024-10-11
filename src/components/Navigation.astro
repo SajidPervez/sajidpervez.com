@@ -110,45 +110,31 @@
     const desktopCoreButton = document.getElementById('desktop-core-button');
     const desktopDropdown = document.getElementById('desktop-dropdown');
 
-    if (mobileMenuToggle) {
-      mobileMenuToggle.addEventListener('click', () => {
-        console.log('Mobile menu toggle clicked');
-        mobileMenu?.classList.toggle('hidden');
-      });
-    }
+    mobileMenuToggle?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
 
-    if (mobileMenuClose) {
-      mobileMenuClose.addEventListener('click', () => {
-        console.log('Mobile menu close clicked');
-        mobileMenu?.classList.add('hidden');
-      });
-    }
+    mobileMenuClose?.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
 
-    if (desktopCoreButton) {
-      desktopCoreButton.addEventListener('click', () => {
-        console.log('Desktop core button clicked');
-        desktopDropdown?.classList.toggle('hidden');
-      });
-    }
+    desktopCoreButton?.addEventListener('click', () => {
+      desktopDropdown?.classList.toggle('hidden');
+    });
 
     document.addEventListener('click', (event) => {
       if (!event.target.closest('#mobile-menu') && !event.target.closest('#mobile-menu-toggle')) {
-        console.log('Closing mobile menu');
         mobileMenu?.classList.add('hidden');
       }
       if (!event.target.closest('#desktop-core-button') && !event.target.closest('#desktop-dropdown')) {
-        console.log('Closing desktop dropdown');
         desktopDropdown?.classList.add('hidden');
       }
     });
 
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 640) { // sm breakpoint
-        console.log('Window resized, hiding mobile menu');
         mobileMenu?.classList.add('hidden');
       }
     });
-
-    console.log('Navigation setup complete');
   });
 </script>
