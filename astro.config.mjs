@@ -20,6 +20,6 @@ export default defineConfig({
     rehypePlugins: []
   },
   integrations: [icon(), mdx(), react(), tailwind()],
-  output: "server",
+  output: 'hybrid', // or 'client'
   adapter: vercel()
 });

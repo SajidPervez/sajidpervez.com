@@ -9,12 +9,11 @@
 
     <!-- Hamburger Button for Mobile -->
     <button
-      id="menu-toggle"
+      id="mobile-menu-toggle"
       class="sm:hidden text-gray-700 focus:outline-none"
       aria-label="Toggle navigation"
     >
       <svg
-        id="menu-icon"
         class="h-6 w-6"
         fill="none"
         stroke="currentColor"
@@ -30,16 +29,14 @@
       </svg>
     </button>
 
-    <!-- Menu Items aligned to the right -->
+    <!-- Mobile Menu -->
     <div
-      id="menu"
-      class="hidden sm:flex flex-col sm:flex-row ml-auto space-y-4 sm:space-y-0 sm:space-x-4 items-center w-full sm:w-auto text-sm"
+      id="mobile-menu"
+      class="hidden fixed inset-0 bg-white z-50 sm:hidden"
     >
-      <!-- All Menu Options for Mobile -->
-      <div class="sm:hidden flex flex-col items-start w-full px-4 py-4 relative">
-        <!-- Close Button at the top right corner -->
+      <div class="flex flex-col items-start w-full px-4 py-4 relative">
         <button
-          id="menu-close"
+          id="mobile-menu-close"
           class="absolute top-4 right-4 text-gray-700 focus:outline-none"
           aria-label="Close navigation"
         >
@@ -58,7 +55,6 @@
             />
           </svg>
         </button>
-        <!-- Menu Links -->
         <a href="/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Home</a>
         <a href="/blog/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Essays</a>
         <a href="/books/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Reading Corner</a>
@@ -66,12 +62,14 @@
         <a href="/merch/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">Cyber Merch</a>
         <a href="/about/" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-200 text-sm">About</a>
       </div>
+    </div>
 
-      <!-- The Core with Dropdown for Desktop -->
-      <div class="relative hidden sm:inline-block">
+    <!-- Desktop Menu -->
+    <div class="hidden sm:flex items-center space-x-4">
+      <div class="relative">
         <button
           class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 flex items-center"
-          id="core-button"
+          id="desktop-core-button"
         >
           The Core
           <svg
@@ -89,70 +87,68 @@
             />
           </svg>
         </button>
-        <!-- Dropdown Menu for Desktop -->
         <ul
-          id="dropdown"
-          class="absolute left-0 mt-2 w-48 z-30 bg-white border rounded-lg shadow-lg hidden"
+          id="desktop-dropdown"
+          class="absolute left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden"
         >
-          <li>
-            <a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Essays</a>
-          </li>
-          <li>
-            <a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Reading Corner</a>
-          </li>
-          <li>
-            <a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Listening</a>
-          </li>
-          <li>
-            <a href="/merch/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Cyber Merch</a>
-          </li>
+          <li><a href="/blog/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Essays</a></li>
+          <li><a href="/books/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Reading Corner</a></li>
+          <li><a href="/podcasts/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Listening</a></li>
+          <li><a href="/merch/" class="block px-4 py-2 hover:bg-gray-200 text-gray-700 text-sm">Cyber Merch</a></li>
         </ul>
       </div>
-
-      <!-- About Link for Desktop -->
-      <a href="/about/" class="hidden sm:block hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 text-sm">
-        About
-      </a>
+      <a href="/about/" class="hover:bg-gray-200 px-2 py-2 rounded-lg text-gray-700 text-sm">About</a>
     </div>
   </div>
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const menu = document.getElementById('menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const dropdown = document.getElementById('dropdown');
+  document.addEventListener('astro:page-load', () => {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const desktopCoreButton = document.getElementById('desktop-core-button');
+    const desktopDropdown = document.getElementById('desktop-dropdown');
 
-    // Function to toggle menu visibility
-    function toggleMenu() {
-      menu?.classList.toggle('hidden');
-      menuIcon?.classList.toggle('hidden');
+    if (mobileMenuToggle) {
+      mobileMenuToggle.addEventListener('click', () => {
+        console.log('Mobile menu toggle clicked');
+        mobileMenu?.classList.toggle('hidden');
+      });
     }
 
-    // Use event delegation for menu toggle, close, and other interactions
-    document.body.addEventListener('click', function(event) {
-      const target = event.target as Element;
-      
-      if (target.closest('#menu-toggle')) {
-        toggleMenu();
-      } else if (target.closest('#menu-close')) {
-        toggleMenu();
-      } else if (target.closest('#core-button')) {
-        dropdown?.classList.toggle('hidden');
-      } else if (!target.closest('#menu') && !menu?.classList.contains('hidden')) {
-        toggleMenu();
-      } else if (!target.closest('#core-button') && !dropdown?.classList.contains('hidden')) {
-        dropdown?.classList.add('hidden');
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', () => {
+        console.log('Mobile menu close clicked');
+        mobileMenu?.classList.add('hidden');
+      });
+    }
+
+    if (desktopCoreButton) {
+      desktopCoreButton.addEventListener('click', () => {
+        console.log('Desktop core button clicked');
+        desktopDropdown?.classList.toggle('hidden');
+      });
+    }
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('#mobile-menu') && !event.target.closest('#mobile-menu-toggle')) {
+        console.log('Closing mobile menu');
+        mobileMenu?.classList.add('hidden');
+      }
+      if (!event.target.closest('#desktop-core-button') && !event.target.closest('#desktop-dropdown')) {
+        console.log('Closing desktop dropdown');
+        desktopDropdown?.classList.add('hidden');
       }
     });
 
-    // Prevent clicks inside the menu from closing it, except for the close button
-    menu?.addEventListener('click', function(event) {
-      const target = event.target as Element;
-      if (!target.closest('#menu-close')) {
-        event.stopPropagation();
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 640) { // sm breakpoint
+        console.log('Window resized, hiding mobile menu');
+        mobileMenu?.classList.add('hidden');
       }
     });
+
+    console.log('Navigation setup complete');
   });
 </script>
-
