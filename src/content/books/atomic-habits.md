@@ -1,7 +1,9 @@
 ---
 title: "Atomic Habits"
 author: "James Clear"
-cover: "/atomic-habits.jpg"
+cover:
+  src: "/atomic-habits.jpg"
+  alt: "Atomic Habits Book Cover"
 comments: "An insightful book on building good habits and breaking bad ones. A must-read for anyone looking to improve their productivity and life."
 url: "https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299"
 status: "read"

@@ -24,9 +24,9 @@ export default function MerchCard({ name, description, cover, purchaseLinks }) {
           onClick={closeLightbox}
         >
           <img
-            src={cover}
-            alt={`Enlarged ${name}`}
-            className="max-w-full max-h-full pointer-events-none" /* Ensure no pointer events on image */
+            src={cover.src}
+            alt={cover.alt}
+            className="max-w-full max-h-full pointer-events-none"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
@@ -37,7 +37,7 @@ export default function MerchCard({ name, description, cover, purchaseLinks }) {
         className="cover-container mb-4 overflow-hidden rounded-md shadow-sm relative"
         onClick={handleImageClick}
       >
-        <img src={cover} alt={`Image of ${name}`} className="merch-cover" />
+        <img src={cover.src} alt={cover.alt} className="merch-cover" />
         {/* Overlay Text */}
         <div className="overlay-text absolute inset-0 flex items-center justify-center text-white font-semibold text-sm bg-black bg-opacity-50">
           Click to enlarge

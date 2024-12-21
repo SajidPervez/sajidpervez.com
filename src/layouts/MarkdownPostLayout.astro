@@ -2,7 +2,6 @@
 import BaseLayout from "./BaseLayout.astro";
 import Prose from "../components/Prose.astro";
 import TOC from '../components/TOC.astro';
-import { Image } from 'astro:assets';
 
 const { frontmatter, content: { title }, headings, Content } = Astro.props;
 ---
@@ -18,11 +17,9 @@ const { frontmatter, content: { title }, headings, Content } = Astro.props;
 
     <!-- Cover image -->
     {frontmatter.cover && (
-      <Image 
-        src={frontmatter.cover} 
-        alt={frontmatter.altText} 
-        width={600}
-        height={600}
+      <img 
+        src={frontmatter.cover.src}
+        alt={frontmatter.cover.alt}
         class="w-full h-auto lg:w-[600px] lg:h-[600px] mb-4 mx-auto object-cover"
       />
     )}
@@ -37,8 +34,6 @@ const { frontmatter, content: { title }, headings, Content } = Astro.props;
         </p>
       ))}
     </div>
-
-
   </header>
 
   <!-- Responsive layout for content and TOC -->
@@ -53,9 +48,11 @@ const { frontmatter, content: { title }, headings, Content } = Astro.props;
 
     <!-- Main Content Area: Spans 2 columns on large screens -->
     <div class="col-span-2">
-      <Prose>
-        <slot />
-      </Prose>
+      <article class="prose prose-lg max-w-none text-gray-900">
+        <Prose>
+          <slot />
+        </Prose>
+      </article>
     </div>
   </div>
 </BaseLayout>

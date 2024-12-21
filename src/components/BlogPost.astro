@@ -4,7 +4,11 @@ const { id, author, title, cover, pubDate, url, altText } = Astro.props;
 ---
 <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4">
 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105">
-  <Image src={cover} alt={altText} class="w-full h-48 object-cover" />
+  <img 
+    src={cover.src} 
+    alt={cover.alt} 
+    class="w-full h-48 object-cover" 
+  />
   <div class="p-6">
     <h2 class="text-xl font-bold mb-2">
       <a href={`/blog/${id}`}>{title}</a>
@@ -15,4 +19,3 @@ const { id, author, title, cover, pubDate, url, altText } = Astro.props;
     </span>
   </div>
 </div>
-

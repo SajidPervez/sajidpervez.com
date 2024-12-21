@@ -1095,6 +1095,253 @@ video {
   margin-bottom: 0;
 }
 
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.7777778;
+}
+
+.prose-lg :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+}
+
+.prose-lg :where([class~="lead"]):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 1.2222222em;
+  line-height: 1.4545455;
+  margin-top: 1.0909091em;
+  margin-bottom: 1.0909091em;
+}
+
+.prose-lg :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.6666667em;
+  margin-bottom: 1.6666667em;
+  padding-inline-start: 1em;
+}
+
+.prose-lg :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 2.6666667em;
+  margin-top: 0;
+  margin-bottom: 0.8333333em;
+  line-height: 1;
+}
+
+.prose-lg :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 1.6666667em;
+  margin-top: 1.8666667em;
+  margin-bottom: 1.0666667em;
+  line-height: 1.3333333;
+}
+
+.prose-lg :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 1.3333333em;
+  margin-top: 1.6666667em;
+  margin-bottom: 0.6666667em;
+  line-height: 1.5;
+}
+
+.prose-lg :where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.7777778em;
+  margin-bottom: 0.4444444em;
+  line-height: 1.5555556;
+}
+
+.prose-lg :where(img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.7777778em;
+  margin-bottom: 1.7777778em;
+}
+
+.prose-lg :where(picture):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.7777778em;
+  margin-bottom: 1.7777778em;
+}
+
+.prose-lg :where(picture > img):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose-lg :where(video):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.7777778em;
+  margin-bottom: 1.7777778em;
+}
+
+.prose-lg :where(kbd):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+  border-radius: 0.3125rem;
+  padding-top: 0.2222222em;
+  padding-inline-end: 0.4444444em;
+  padding-bottom: 0.2222222em;
+  padding-inline-start: 0.4444444em;
+}
+
+.prose-lg :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+}
+
+.prose-lg :where(h2 code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.8666667em;
+}
+
+.prose-lg :where(h3 code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.875em;
+}
+
+.prose-lg :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+  line-height: 1.75;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.375rem;
+  padding-top: 1em;
+  padding-inline-end: 1.5em;
+  padding-bottom: 1em;
+  padding-inline-start: 1.5em;
+}
+
+.prose-lg :where(ol):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+  padding-inline-start: 1.5555556em;
+}
+
+.prose-lg :where(ul):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+  padding-inline-start: 1.5555556em;
+}
+
+.prose-lg :where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0.6666667em;
+  margin-bottom: 0.6666667em;
+}
+
+.prose-lg :where(ol > li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-start: 0.4444444em;
+}
+
+.prose-lg :where(ul > li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-start: 0.4444444em;
+}
+
+.prose-lg :where(.prose-lg > ul > li p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0.8888889em;
+  margin-bottom: 0.8888889em;
+}
+
+.prose-lg :where(.prose-lg > ul > li > p:first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+}
+
+.prose-lg :where(.prose-lg > ul > li > p:last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-bottom: 1.3333333em;
+}
+
+.prose-lg :where(.prose-lg > ol > li > p:first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+}
+
+.prose-lg :where(.prose-lg > ol > li > p:last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-bottom: 1.3333333em;
+}
+
+.prose-lg :where(ul ul, ul ol, ol ul, ol ol):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0.8888889em;
+  margin-bottom: 0.8888889em;
+}
+
+.prose-lg :where(dl):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+}
+
+.prose-lg :where(dt):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.3333333em;
+}
+
+.prose-lg :where(dd):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0.6666667em;
+  padding-inline-start: 1.5555556em;
+}
+
+.prose-lg :where(hr):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 3.1111111em;
+  margin-bottom: 3.1111111em;
+}
+
+.prose-lg :where(hr + *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-lg :where(h2 + *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-lg :where(h3 + *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-lg :where(h4 + *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-lg :where(table):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+  line-height: 1.5;
+}
+
+.prose-lg :where(thead th):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-end: 0.75em;
+  padding-bottom: 0.75em;
+  padding-inline-start: 0.75em;
+}
+
+.prose-lg :where(thead th:first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-start: 0;
+}
+
+.prose-lg :where(thead th:last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-end: 0;
+}
+
+.prose-lg :where(tbody td, tfoot td):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-top: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-bottom: 0.75em;
+  padding-inline-start: 0.75em;
+}
+
+.prose-lg :where(tbody td:first-child, tfoot td:first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-start: 0;
+}
+
+.prose-lg :where(tbody td:last-child, tfoot td:last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  padding-inline-end: 0;
+}
+
+.prose-lg :where(figure):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 1.7777778em;
+  margin-bottom: 1.7777778em;
+}
+
+.prose-lg :where(figure > *):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.prose-lg :where(figcaption):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  font-size: 0.8888889em;
+  line-height: 1.5;
+  margin-top: 1em;
+}
+
+.prose-lg :where(.prose-lg > :first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-top: 0;
+}
+
+.prose-lg :where(.prose-lg > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  margin-bottom: 0;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1176,6 +1423,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -1202,6 +1453,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .grid {
@@ -1274,6 +1529,10 @@ video {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-none {
+  max-width: none;
 }
 
 .max-w-sm {
@@ -1356,6 +1615,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .overflow-hidden {
@@ -1587,6 +1852,11 @@ video {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
@@ -1785,12 +2055,9 @@ h3 {
 }
 
 .tag {
-  /*margin: 0.05em; */
   padding: 0.5em;
   font-size: 1em;
-  /*border-radius: 0.5em;
-    background-color: #F8FCFD; */
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .tag a {
@@ -1799,8 +2066,7 @@ h3 {
 }
 
 .tag:hover {
-  background-color: rgba(69, 69, 70, 0.1);
-  /*border: 1px solid #00539F; */
+  color: rgb(219, 74, 41);
 }
 
 a {
@@ -2416,6 +2682,73 @@ img.sajid {
   background-color: #d1d5db;
 }
 
+/* Table of Contents styles */
+
+.toc {
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  padding: 1rem;
+}
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+/* TOC Heading Styles */
+
+.toc-link {
+  display: block;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.toc-link .link-text {
+  display: inline-block;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: inherit;
+  position: relative;
+}
+
+.toc-link:hover .link-text {
+  --tw-text-opacity: 1;
+  color: rgb(194 65 12 / var(--tw-text-opacity));
+}
+
+.toc-link .link-text::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(219, 74, 41);
+  bottom: -1px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.toc-link:hover .link-text::after {
+  transform: scaleX(1);
+}
+
+.toc-link + ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
@@ -2476,6 +2809,23 @@ img.sajid {
   outline-offset: 2px;
 }
 
+.prose-headings\:mb-4 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-bottom: 1rem;
+}
+
+.prose-headings\:mt-6 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-top: 1.5rem;
+}
+
+.prose-headings\:font-bold :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  font-weight: 700;
+}
+
+.prose-headings\:text-gray-800 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 .prose-h1\:text-xl :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -2485,13 +2835,48 @@ img.sajid {
   font-weight: 700;
 }
 
+.prose-h1\:text-gray-800 :is(:where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.prose-h2\:text-gray-800 :is(:where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.prose-h3\:text-gray-800 :is(:where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.prose-h4\:text-gray-800 :is(:where(h4):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.prose-p\:my-3 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .prose-p\:text-justify :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   text-align: justify;
+}
+
+.prose-p\:text-gray-800 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .prose-a\:text-blue-600 :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.prose-li\:text-gray-800 :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .prose-img\:rounded-xl :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -2612,4 +2997,3 @@ img.sajid {
     line-height: 1.75rem;
   }
 }
-

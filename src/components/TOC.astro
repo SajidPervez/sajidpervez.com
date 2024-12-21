@@ -4,42 +4,36 @@ const { headings } = Astro.props;
 
 const toc = buildHierarchy(headings);
 
-function buildHierarchy(headings: any)
-{
+function buildHierarchy(headings: any) {
   const toc: any[] = [];
   const parentHeadings = new Map();
   
-  if (!headings)
-    return toc;
+  if (!headings) return toc;
   
   headings.forEach((h: any) => {
+    // Skip the Table of Content/Contents headings
+    if (h.text.toLowerCase().startsWith('table of content')) return;
+    
     const heading = { ...h, subheadings: [] };
     parentHeadings.set(heading.depth, heading);
-    // Add check to ensure parent heading exists
+    
     if (heading.depth === 2) {
       toc.push(heading);
     } else {
       const parent = parentHeadings.get(heading.depth - 1);
       if (parent) {
         parent.subheadings.push(heading);
-      } else {
-        // If the parent is not found, treat it as a top-level heading
-        toc.push(heading);
       }
     }
   });
-
+  
   return toc;
 }
-//console.log(toc);
 ---
 
-{toc && toc.length > 0 && (
-  <nav class="article-toc">
-    <ul>
-      {toc.map((heading) => (
-        <TOCHeading heading={heading} />
-      ))}
-    </ul>
-  </nav>
-)}
+<nav class="toc">
+  
+  <ul>
+    {toc.map((heading) => <TOCHeading heading={heading} />)}
+  </ul>
+</nav>

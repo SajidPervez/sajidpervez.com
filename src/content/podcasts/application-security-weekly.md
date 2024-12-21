@@ -1,7 +1,9 @@
 ---
 name: "Application Security Weekly"
-host: "Mike Shima & John Kinsella"
-description: "The Application Security Weekly podcast deliver interviews and news from the worlds of AppSec, DevOps, DevSecOps and all other ways people find and fix software flaws."
-cover: "/application-security-weekly.jpeg"
-url: "https://podcasts.apple.com/au/podcast/application-security-weekly-audio/id1338907745"
+host: "Mike Shema, John Kinsella, Keith Hoodlet"
+description: "Join Mike Shema, John Kinsella, and Keith Hoodlet as they dive into the latest cybersecurity news, vulnerabilities, and trends that impact the world of application security."
+cover:
+  src: "/application-security-weekly.jpeg"
+  alt: "Application Security Weekly Podcast Logo"
+url: "https://securityweekly.com/category/application-security-weekly/"
 ---

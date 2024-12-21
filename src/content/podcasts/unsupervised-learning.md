@@ -1,7 +1,9 @@
 ---
 name: "Unsupervised Learning"
 host: "Daniel Miessler"
-description: "Unsupervised Learning is a Security, AI, and Meaning-focused podcast that looks at how best to thrive as humans in a post-AI world. It combines original ideas, analysis, and mental models to bring not just the news, but why it matters and how to respond."
-cover: "/unsupervised-learning.jpeg"
-url: "https://podcasts.apple.com/au/podcast/unsupervised-learning/id1099711235"
+description: "Unsupervised Learning is a weekly podcast that helps you stay up to date with cybersecurity news, understand complex topics, and improve your security knowledge. Daniel Miessler brings his decades of security experience to help you learn what matters in security."
+cover:
+  src: "/unsupervised-learning.jpeg"
+  alt: "Unsupervised Learning Podcast Logo"
+url: "https://podcasts.apple.com/us/podcast/unsupervised-learning/id1099711235"
 ---

@@ -4,8 +4,8 @@ const { title, subtitle1, subtitle2, backgroundImage, link } = Astro.props;
 
 <div>
   <section 
-    class="container w-full max-w-7xl mx-auto  relative flex items-center justify-center h-[400px] md:h-[500px] lg:h-[600px] bg-cover bg-center" 
-    style={`background-image: url(${backgroundImage || '/default-background.jpg'})`}
+    class="container w-full max-w-7xl mx-auto relative flex items-center justify-center h-[400px] md:h-[500px] lg:h-[600px] bg-cover bg-center" 
+    style={backgroundImage ? `background-image: url(${backgroundImage})` : ''}
   >
     <div class="absolute inset-0"></div> <!-- Overlay -->
     <div class="relative text-center text-gray-600 z-10">

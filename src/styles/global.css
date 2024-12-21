@@ -124,12 +124,9 @@ p, a, li, span, div {
   }
   
   .tag {
-    /*margin: 0.05em; */ 
     padding: 0.5em;
     font-size: 1em;
-    /*border-radius: 0.5em;
-    background-color: #F8FCFD; */
-    transition: background-color 0.3s, border-color 0.3s; 
+    transition: all 0.3s ease;
   }
   
   .tag a {
@@ -138,8 +135,7 @@ p, a, li, span, div {
   }
   
   .tag:hover {
-    background-color: rgba(69, 69, 70, 0.1);
-    /*border: 1px solid #00539F; */
+    color: rgb(219, 74, 41);
   }
 
   a {
@@ -637,3 +633,52 @@ img.sajid {
   background-color: #d1d5db;
 }
 
+/* Table of Contents styles */
+.toc {
+  @apply bg-gray-50 p-4 rounded-lg mb-8;
+}
+
+.toc ul {
+  @apply list-none pl-4;
+}
+
+.toc li {
+  @apply mb-2;
+}
+
+/* TOC Heading Styles */
+.toc-link {
+  @apply block text-gray-700 py-1;
+  width: fit-content;
+}
+
+.toc-link .link-text {
+  @apply inline-block transition-all duration-300 ease-in-out;
+  color: inherit;
+  position: relative;
+}
+
+.toc-link:hover .link-text {
+  @apply text-orange-700;
+}
+
+.toc-link .link-text::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(219, 74, 41);
+  bottom: -1px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.toc-link:hover .link-text::after {
+  transform: scaleX(1);
+}
+
+.toc-link + ul {
+  @apply pl-4 list-none;
+}

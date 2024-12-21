@@ -1,7 +1,9 @@
 ---
 title: "API Security for White Hat Hackers"
 author: "Confidence Staveley"
-cover: "/api-security-for-white-hat-hackers.jpg"
+cover:
+  src: "/api-security-for-white-hat-hackers.jpg"
+  alt: "API Security for White Hat Hackers Book Cover"
 comments: "APIs have evolved into an essential part of modern applications, making them an attractive target for cybercriminals. Written for security professionals and developers, this comprehensive guide offers practical insights into testing APIs, identifying vulnerabilities, and fixing them."
 url: "https://www.amazon.com.au/API-Security-White-Hackers-implementation-ebook/dp/B0CLG8NR4V"
 status: "reading" # Use "to-read" for books yet to be read and "read" for books already read

@@ -1,9 +1,12 @@
 ---
 const { heading } = Astro.props;
+
+// Remove the ID and $ from the display text
+const displayText = heading.text.replace(/\s*\{#[\w-]+\}\s*$/, '').replace(/\s*\$\s*$/, '');
 ---
 <li>
-  <a href={'#' + heading.slug}>
-    {heading.text}
+  <a href={'#' + heading.slug} class="toc-link no-underline">
+    <span class="link-text">{displayText}</span>
   </a>
   {
     heading.subheadings.length > 0 && (

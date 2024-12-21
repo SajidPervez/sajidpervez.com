@@ -11,7 +11,11 @@ const publishedPosts = blogPosts.filter((post) => post.data.isDraft === false);
   {publishedPosts.map((post) => (
     <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden ">
       <div class="blog-cover-container">
-        <Image src={post.data.cover} alt={post.data.altText} class="blog-cover" />
+        <img 
+          src={post.data.cover.src} 
+          alt={post.data.cover.alt} 
+          class="blog-cover" 
+        />
       </div>
       <div class="p-4">
         <h2 class="text-l font-bold mb-2">
