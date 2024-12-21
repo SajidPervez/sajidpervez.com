@@ -21,7 +21,9 @@ const { frontmatter, content: { title }, headings, Content } = Astro.props;
       <Image 
         src={frontmatter.cover} 
         alt={frontmatter.altText} 
-        class="w-full h-auto lg:w-[600px] lg:h-[600px] mb-4 mx-auto"
+        width={600}
+        height={600}
+        class="w-full h-auto lg:w-[600px] lg:h-[600px] mb-4 mx-auto object-cover"
       />
     )}
    
