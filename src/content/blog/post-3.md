@@ -4,7 +4,7 @@ title: My Third Blog Post
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
 isDraft: true
-cover: "/blog-images/vulnerabilities-universe.jpg"
+cover: "../../assets/blog-images/vulnerabilities-universe.jpg"
 altText: "The Astro logo on a dark background with rainbow rays."
 pubDate: "2022-07-15"
 tags: ["astro", "learning in public", "setbacks", "community"]

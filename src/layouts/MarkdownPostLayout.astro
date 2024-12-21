@@ -2,6 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import Prose from "../components/Prose.astro";
 import TOC from '../components/TOC.astro';
+import { Image } from 'astro:assets';
 
 const { frontmatter, content: { title }, headings, Content } = Astro.props;
 ---
@@ -16,11 +17,13 @@ const { frontmatter, content: { title }, headings, Content } = Astro.props;
     </p>
 
     <!-- Cover image -->
-    <img 
-      src={frontmatter.cover} 
-      alt={frontmatter.altText} 
-      class="w-full h-auto lg:w-[600px] lg:h-[600px] mb-4 mx-auto"
-    />
+    {frontmatter.cover && (
+      <Image 
+        src={frontmatter.cover} 
+        alt={frontmatter.altText} 
+        class="w-full h-auto lg:w-[600px] lg:h-[600px] mb-4 mx-auto"
+      />
+    )}
    
     <!-- Tags -->
     <div class="tags text-center lg:text-left flex flex-wrap justify-center lg:justify-start gap-0">
