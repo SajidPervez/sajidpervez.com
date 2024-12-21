@@ -4,7 +4,7 @@ title: My Fourth Blog Post
 author: Astro Learner
 description: "This post will show up on its own!"
 isDraft: true
-cover: "@assets/blog-images/vulnerabilities-universe.jpg"
+cover: "../../../assets/blog-images/vulnerabilities-universe.jpg"
 altText: "The word astro against an illustration of planets and stars."
 pubDate: "2022-08-08"
 tags: ["astro", "successes"]
