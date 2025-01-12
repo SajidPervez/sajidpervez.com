@@ -47,17 +47,18 @@ To address these challenges, engineers and security teams must adopt robust secu
    - Always use vaults (e.g., HashiCorp Vault, AWS Secrets Manager) to store secrets securely.
 2. **Dependency Injection**:
    - Leverage built-in framework controls for injecting secrets at runtime instead of hardcoding them. Here is an example:
+   
    ```python
-@user_proxy.register_for_execution()
-@assistant.register_for_llm(description="Get the balance of the account")
-def get_balance_1(
-    # Account which will be injected to the function
-    account: Annotated[Account, Depends(bob_account)],
-    # It is also possible to use the following syntax to define the dependency
-    # account: Account = Depends(bob_account),
-) -> str:
-    return _get_balance(account)
-```
+    @user_proxy.register_for_execution()
+    @assistant.register_for_llm(description="Get the balance of the account")
+    def get_balance_1(
+        # Account which will be injected to the function
+        account: Annotated[Account, Depends(bob_account)],
+        # It is also possible to use the following syntax to define the dependency
+        # account: Account = Depends(bob_account),
+    ) -> str:
+        return _get_balance(account)
+    ```
 3. **Input and Output Validation**:
    - Rigorously validate inputs and outputs to and from the agent, especially when interacting with the LLM or Host OS.
 4. **Scoped Secrets**:
@@ -74,7 +75,6 @@ Implementing these practices is easier said than done. Security teams need to ta
 - **Building Security Agents**: Develop agents designed to enforce guardrails for secret handling, monitor compliance, and prevent secrets sprawl.
 - **Monitoring and Response**: Deploy robust monitoring tools to detect and respond to risky events, such as unauthorized access or potential secret leaks.
 
----
 
 ## Key Takeaway
 
