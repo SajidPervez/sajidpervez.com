@@ -57,7 +57,7 @@ def get_balance_1(
     # account: Account = Depends(bob_account),
 ) -> str:
     return _get_balance(account)
-
+```
 3. **Input and Output Validation**:
    - Rigorously validate inputs and outputs to and from the agent, especially when interacting with the LLM or Host OS.
 4. **Scoped Secrets**:
