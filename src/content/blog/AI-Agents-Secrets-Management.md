@@ -70,5 +70,5 @@ Implementing these practices is easier said than done. Security teams need to ta
 In agent-based systems, secrets management is not just a technical necessity but a cornerstone of security. By implementing strong practices and leveraging tools for secure storage, validation, and monitoring, we can prevent disasters and build trust in these systems.
 
 ## References
-1. ![Security of AI Agents] (https://arxiv.org/html/2406.08689v2)
-2. ![Dependency Injection] (https://docs.ag2.ai/blog/2025-01-07-Tools-Dependency-Injection/index)
+1. [Security of AI Agents] (https://arxiv.org/html/2406.08689v2)
+2. [Dependency Injection] (https://docs.ag2.ai/blog/2025-01-07-Tools-Dependency-Injection/index)
