@@ -5,7 +5,7 @@ pubDate: 10-01-2025
 author: 'Sajid Pervez'
 isDraft: false
 cover:
-  src: "/blog-images/agent-archi-1.png"
+  src: "/blog-images/agents-archi-1.png"
   alt: ""
 tags: ["AI Agents", "Secrets Management", "AppSec"]
 canonicalURL: "https://localhost:4321/blog/AI-Agents-and-Secrets-Management"
@@ -16,7 +16,7 @@ canonicalURL: "https://localhost:4321/blog/AI-Agents-and-Secrets-Management"
 Agent-based systems are becoming the backbone of modern software architectures. These systems automate repetitive tasks that humans find tedious and are increasingly being designed to work with voice-based interfaces—the next wave of user interaction.
 
 Take a look at this simple architecture diagram. Threat modeling such a system can uncover a wide range of issues, from **remote code execution** to **authentication, authorization, session management**, and beyond. While I plan to address many of these in future posts, this micro-blog will focus on one critical area: **secrets management**.
-![A simple architecture diagram](/blog-images/agent-archi-1.png)
+![A simple architecture diagram](/blog-images/agents-archi-1.png)
 
 ## Secrets Management: The Heart of Secure Agent Systems
 
@@ -31,7 +31,7 @@ Imagine you have a personal banking agent that tracks and analyzes your finances
 
 Now, consider a more complex scenario: multiple agents from different teams within an organization, each requiring access to sensitive secrets (e.g., privileged API keys) to perform their tasks. To make things even trickier, imagine these agents are developed and deployed independently by different teams, each following their own practices. Add third-party agents into the mix, and you have a recipe for disaster if even one agent mishandles its secrets.
 
-![A multi-agent system](/blog-images/agent-archi-2.png)
+![A multi-agent system](/blog-images/agents-archi-2.png)
 
 In such scenarios, risks include:
 
