@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "AI Agents and Secrets Management"
-pubDate: 10-01-2025
+pubDate: 01-10-2025
 author: 'Sajid Pervez'
 isDraft: false
 cover:
