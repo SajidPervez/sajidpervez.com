@@ -5,7 +5,7 @@ pubDate: 01-10-2025
 author: 'Sajid Pervez'
 isDraft: false
 cover:
-  src: "/blog-images/agents-archi-1.png"
+  src: "/blog-images/agent-with-keys.png"
   alt: ""
 tags: ["AI Agents", "Secrets Management", "AppSec"]
 canonicalURL: "https://localhost:4321/blog/AI-Agents-and-Secrets-Management"
@@ -47,7 +47,7 @@ To address these challenges, engineers and security teams must adopt robust secu
    - Always use vaults (e.g., HashiCorp Vault, AWS Secrets Manager) to store secrets securely.
 2. **Dependency Injection**:
    - Leverage built-in framework controls for injecting secrets at runtime instead of hardcoding them. Here is an example:
-   
+
    ```python
     @user_proxy.register_for_execution()
     @assistant.register_for_llm(description="Get the balance of the account")
