@@ -21,10 +21,10 @@ The CyberSec Best Practices Tool is a project built to dynamically display vario
 One thing I really appreciate is how the tool uses a typewriter-style animation to cycle through cybersecurity best practices. It’s such a unique and eye-catching way to present information, keeping you engaged as you learn.
 
 ### Domain Filtering
-I find it super helpful that the tool lets you filter practices by specific security domains, like network security or data protection. Of course, you can always choose to view everything at once if you want a broader understanding.
+I find it super helpful that the tool lets you filter practices by specific security domains, like network security or data protection. Of course, you can let "All Domains" if you want it to be running on auto and showing a practice from a random domain.
 
 ### Customizable Timing
-Another great feature is the adjustable timer. I like being able to control how long each practice is displayed, with a minimum interval of 20 seconds. It’s perfect for tailoring the experience to your own pace.
+Another great feature is the adjustable timer. I like being able to control how long each practice is displayed, with a minimum interval of 10 seconds. It’s perfect for tailoring the experience to your own pace.
 
 ### Detailed Explanations
 For those of us who want to go beyond the basics, the tool integrates with the **Google Gemini API** to provide detailed explanations and real-world examples for each practice. This extra layer of information makes it easier to apply what you learn in a practical context.
