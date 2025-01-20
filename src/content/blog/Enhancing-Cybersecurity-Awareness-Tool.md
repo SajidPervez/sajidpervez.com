@@ -5,7 +5,7 @@ pubDate: 01-18-2025
 author: 'Sajid Pervez'
 isDraft: false
 cover:
-  src: "/blog-images/cybersecurity-awareness-tool.png"
+  src: "/blog-images/cybersec-awareness-tool.png"
   alt: ""
 tags: ["AI", "Security Awareness", "AppSec", "Cybersecurity Awareness"]
 canonicalURL: "https://localhost:4321/blog/Enhancing-Cybersecurity-Awareness-Tool"
