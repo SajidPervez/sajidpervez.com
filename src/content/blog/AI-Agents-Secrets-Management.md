@@ -8,7 +8,7 @@ cover:
   src: "/blog-images/agent-with-keys.png"
   alt: ""
 tags: ["AI Agents", "Secrets Management", "AppSec"]
-canonicalURL: "https://localhost:4321/blog/AI-Agents-and-Secrets-Management"
+canonicalURL: "https://localhost:4321/blog/AI-Agents-Secrets-Management"
 ---
 
 # AI Agents and Secrets Management
