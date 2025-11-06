@@ -21,5 +21,11 @@ export default defineConfig({
   },
   integrations: [icon(), mdx(), react(), tailwind()],
   output: 'hybrid', // or 'client'
-  adapter: vercel()
+  adapter: vercel(),
+  server: {
+    watch: {
+      // Enable watching all files for hot reload
+      ignored: ['!**/node_modules/**']
+    }
+  }
 });
