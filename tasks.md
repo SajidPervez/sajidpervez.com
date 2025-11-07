@@ -39,7 +39,7 @@
 - [ ] Confirm build succeeds (`npm run build`) and dynamic routes prerender where expected.
 
 ## Phase 7 – Cleanup & Handover
-- [ ] Remove legacy Astro-specific files once migration is verified (after backup or branch strategy is in place).
-- [ ] Update documentation/README with new setup, scripts, and deployment instructions.
+- [x] Remove legacy Astro-specific files once migration is verified (after backup or branch strategy is in place).
+- [x] Update documentation/README with new setup, scripts, and deployment instructions.
 - [ ] Prepare deployment pipeline for Next.js (Vercel or alternative) and smoke test production build.
 - [ ] Capture outstanding follow-up tasks/bugs in this checklist before closing.

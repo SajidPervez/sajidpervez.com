@@ -1,18 +1,30 @@
 # About Sajidpervez.com
 
-This is my digital corner on the web where I write essays, share my reading and  listening collections with anyone and everyone.
+This is my digital corner on the web where I write essays, share the books and podcasts I’m enjoying, and collect resources for other security practitioners.
 
-Well, you might think why I choose Astro when a simple blog could be created on platforms like Hugo, my answer would be flexibility that Astro offers is way more than what Hugo offers.
+The site now runs on **Next.js** using the Magic Portfolio template from Once UI. The migration keeps all of the original Astro-era content, but takes advantage of Magic Portfolio’s opinionated design system, MDX-driven content model, and hybrid rendering support.
 
-I built my site from ground up rather than using any template and hence have learned a new tool which I can use in the future for some other projects.
+## Current stack
+- Next.js 15 + Magic Portfolio (Once UI)
+- MDX content for essays and portfolio posts
+- Tailwind-based Once UI styling
+- Hosted on Vercel
 
-## My tech stack
-- AstroJS - Main framework
-- TailwindCSS - Styling and typography
-- Fonts - Canela Deck and Lato
-- Deployment - Vercel
+## Local development
+
+```bash
+# install dependencies
+cd magic-portfolio
+npm install
+
+# start dev server
+npm run dev
+
+# build for production
+npm run build
+```
 
 ## 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Interested in the template that powers this site? Check out [Magic Portfolio](https://docs.once-ui.com/docs/magic-portfolio/quick-start) by Once UI.
