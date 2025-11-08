@@ -85,7 +85,8 @@ export default function Home() {
           background="surface"
           border="neutral-alpha-weak"
           horizontal="center"
-          s={{ direction: "column", horizontal: "start" }}
+          align="center"
+          s={{ direction: "column", horizontal: "center", align: "center" }}
         >
           <Avatar src={person.avatar} size="xl" />
           <Column gap="m" maxWidth="m" horizontal="center" align="center">
