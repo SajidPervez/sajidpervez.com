@@ -21,7 +21,10 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const isConvertKitForm =
     newsletter.ctaUrl?.includes("app.convertkit.com/forms") &&
     newsletter.ctaUrl?.includes("/subscriptions");
-  const isKitEmbed = newsletter.ctaUrl?.includes("kit.com/c978e30ec2");
+  const kitEmbedMatch = newsletter.ctaUrl?.match(/kit\.com\/([a-z0-9]+)(?:\/index\.js)?$/i);
+  const kitEmbedId = kitEmbedMatch?.[1];
+  const kitEmbedSrc = kitEmbedId ? `https://sajidpervez.kit.com/${kitEmbedId}/index.js` : undefined;
+  const isKitEmbed = Boolean(kitEmbedSrc);
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -169,7 +172,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           </Row>
         </form>
         ) : isKitEmbed ? (
-          <Script async data-uid="c978e30ec2" src={newsletter.ctaUrl} />
+          <Script async data-uid={kitEmbedId} src={kitEmbedSrc} />
         ) : (
           <Row paddingTop="8">
             <Button
