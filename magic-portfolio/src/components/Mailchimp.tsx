@@ -2,6 +2,7 @@
 
 import { mailchimp, newsletter } from "@/resources";
 import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
+import Script from "next/script";
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { useState } from "react";
 
@@ -17,6 +18,10 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
+  const isConvertKitForm =
+    newsletter.ctaUrl?.includes("app.convertkit.com/forms") &&
+    newsletter.ctaUrl?.includes("/subscriptions");
+  const isKitEmbed = newsletter.ctaUrl?.includes("kit.com/c978e30ec2");
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -112,20 +117,20 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           {newsletter.description}
         </Text>
       </Column>
-      {mailchimp.action ? (
+      {newsletter.ctaUrl ? (
+        isConvertKitForm ? (
         <form
           style={{
             width: "100%",
             display: "flex",
             justifyContent: "center",
           }}
-          action={mailchimp.action}
+          action={newsletter.ctaUrl}
           method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <Row
-            id="mc_embed_signup_scroll"
             fillWidth
             maxWidth={24}
             s={{ direction: "column" }}
@@ -133,8 +138,8 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           >
             <Input
               formNoValidate
-              id="mce-EMAIL"
-              name="EMAIL"
+              id="newsletter-email"
+              name="email_address"
               type="email"
               placeholder="Email"
               required
@@ -148,50 +153,36 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
               onBlur={handleBlur}
               errorMessage={error}
             />
-            <div style={{ display: "none" }}>
-              <input
-                type="checkbox"
-                readOnly
-                name="group[3492][1]"
-                id="mce-group[3492]-3492-0"
-                value=""
-                checked
-              />
-            </div>
-            <div id="mce-responses" className="clearfalse">
-              <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-              <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
-            </div>
-            <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
-              <input
-                type="text"
-                readOnly
-                name="b_c1a5a210340eb6c7bff33b2ba_0462d244aa"
-                tabIndex={-1}
-                value=""
-              />
-            </div>
             <div className="clear">
               <Row height="48" vertical="center">
-                <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
+                <Button
+                  id="newsletter-subscribe"
+                  type="submit"
+                  value="Subscribe"
+                  size="m"
+                  fillWidth
+                >
                   Subscribe
                 </Button>
               </Row>
             </div>
           </Row>
         </form>
-      ) : newsletter.ctaUrl ? (
-        <Row paddingTop="8">
-          <Button
-            href={newsletter.ctaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            size="m"
-            data-border="rounded"
-          >
-            {newsletter.ctaLabel || "Sign up"}
-          </Button>
-        </Row>
+        ) : isKitEmbed ? (
+          <Script async data-uid="c978e30ec2" src={newsletter.ctaUrl} />
+        ) : (
+          <Row paddingTop="8">
+            <Button
+              href={newsletter.ctaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              size="m"
+              data-border="rounded"
+            >
+              {newsletter.ctaLabel || "Sign up"}
+            </Button>
+          </Row>
+        )
       ) : null}
     </Column>
   );

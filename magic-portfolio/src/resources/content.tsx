@@ -26,7 +26,7 @@ const newsletter: Newsletter = {
   display: true,
   title: <>Stay up to date with {person.firstName}</>,
   description: <>Essays, reading picks, and security insights—delivered occasionally.</>,
-  ctaUrl: "https://sajidpervez.ck.page/d20e8ab5b7",
+  ctaUrl: "https://sajidpervez.kit.com/c978e30ec2/index.js",
   ctaLabel: "Join the newsletter",
 };
 
