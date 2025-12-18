@@ -2,9 +2,8 @@
 
 import { mailchimp, newsletter } from "@/resources";
 import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
-import Script from "next/script";
 import { opacity, SpacingToken } from "@once-ui-system/core";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
   let timeout: ReturnType<typeof setTimeout>;
@@ -18,6 +17,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
+  const kitEmbedRef = useRef<HTMLDivElement>(null);
   const isConvertKitForm =
     newsletter.ctaUrl?.includes("app.convertkit.com/forms") &&
     newsletter.ctaUrl?.includes("/subscriptions");
@@ -25,6 +25,25 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
   const kitEmbedId = kitEmbedMatch?.[1];
   const kitEmbedSrc = kitEmbedId ? `https://sajidpervez.kit.com/${kitEmbedId}/index.js` : undefined;
   const isKitEmbed = Boolean(kitEmbedSrc);
+
+  useEffect(() => {
+    if (!kitEmbedSrc || !kitEmbedId || !kitEmbedRef.current) {
+      return;
+    }
+
+    const container = kitEmbedRef.current;
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = kitEmbedSrc;
+    script.dataset.uid = kitEmbedId;
+    container.appendChild(script);
+
+    return () => {
+      container.innerHTML = "";
+    };
+  }, [kitEmbedSrc, kitEmbedId]);
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -172,7 +191,9 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
           </Row>
         </form>
         ) : isKitEmbed ? (
-          <Script async data-uid={kitEmbedId} src={kitEmbedSrc} />
+          <Row fillWidth maxWidth={24} s={{ direction: "column" }}>
+            <div ref={kitEmbedRef} style={{ width: "100%" }} />
+          </Row>
         ) : (
           <Row paddingTop="8">
             <Button
