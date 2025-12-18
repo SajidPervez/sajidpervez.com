@@ -1,0 +1,72 @@
+---
+title: "Agent Skills and Supply Chain Security"
+summary: "Agent Skills keep context lean, but shared skills introduce a new supply-chain risk in agent ecosystems."
+image: "/blog-images/vulnerabilities-universe.jpg"
+publishedAt: "2025-12-18"
+tags:
+  - "AI Agents"
+  - "Supply Chain"
+  - "AppSec"
+---
+
+# Agent Skills and Supply Chain Security
+
+## What Are Agent Skills?
+
+Agent Skills are organized folders of instructions, scripts, and resources that agents can discover and load dynamically to perform better at specific tasks. Think of them as packaged bundles of **instructions**, **code**, and **resources** that teach an agent how to perform specific tasks—from analyzing data visualizations to interacting with APIs, manipulating files, or executing code.
+
+## What Does a Skill Look Like?
+
+At its simplest, a skill is a directory that contains a `SKILL.md` file with natural language instructions for the agent, along with any supporting **scripts**, **images**, or other **resources** needed to complete the task.
+
+For example, if you want an agent with better PDF management skills, you would create a `pdf/SKILL.md` folder/file structure. `pdf/SKILL.md` will have two key sections:
+
+1. YAML frontmatter with `name` and `description` as required keys.
+2. Markdown with detailed instructions and references to other files/resources.
+
+![Skill folder structure](/blog-images/pasted-image-20251024123432.png)
+
+## Why Do Skills Matter?
+
+If you're reading this article, you've likely encountered the term **context engineering**—the art of managing what information lives in an agent's context window.
+
+Here's the problem: as you work with or scale your agent applications, context bloat becomes inevitable. System prompts, user instructions, MCP tool descriptions, API documentation, and workflow logic all compete for limited context space. This isn't just an efficiency issue—it directly degrades agent performance. When context windows are cluttered with verbose tool descriptions and repetitive instructions, agents struggle to focus on what actually matters for the task at hand. They miss critical details, hallucinate more frequently, and make poor decisions because the signal-to-noise ratio has plummeted.
+
+Skills offer an elegant solution: instead of cramming everything into context upfront, you package capabilities into modular, on-demand units that load only when needed, keeping your agent's context lean and its performance sharp.
+
+![Skills as on-demand modules](/blog-images/pasted-image-20251024125032.png)
+
+## Yet Another Supply Chain Risk
+
+Here's where things get concerning: Claude Skills are being shared and traded across developer communities, creating a supply chain dynamic similar to npm packages, Python libraries, or MCP servers. And just like those ecosystems, this opens the door to supply chain attacks.
+
+A malicious Skill can alter agent behavior in dangerous ways—tricking the agent into executing harmful **code**, **exfiltrating sensitive data**, or performing **unauthorized** operations. The risk is amplified because agents often have broad access to systems, files, and APIs. When a compromised Skill is loaded, everything connected to your agent falls within the blast radius.
+
+Consider the MCP (Model Context Protocol) analogy: just as you wouldn't blindly connect to an unknown MCP server without understanding what data it accesses or what operations it performs, you shouldn't load untrusted Skills into your agent environment. The attack surface is similar—malicious actors can embed harmful (sometimes hidden) instructions or code that exploits the agent's permissions and context.
+
+## What This Means for Developers
+
+Before deploying any Skill even from trusted sources, you must thoroughly audit all bundled files—the SKILL.md, scripts, images, and resources. Ask for help from your security team for review and look for red flags like:
+
+- Unexpected network calls or API requests
+- File access patterns that don't align with the Skill's stated purpose
+- Obfuscated code or suspicious operations
+- Requests for excessive permissions or system access
+
+The security principles are straightforward:
+
+- Only use the skills you created yourself
+- Always verify and security review skills from trusted third parties
+- Never use skills from untrusted or unknown sources
+
+Treat third-party Skills with the same scrutiny you'd apply to any dependency in your software supply chain. Tools like MYOB can monitor traditional dependencies via scanning tools, but Skills or MCPs are still outside those guardrails.
+
+## Moment of Reflection
+
+With the agentic explosion, we security folks find ourselves chasing ghosts with the help of diligent humans who are not equipped to counter this ever-evolving behavior and attack surface. Attacks are now done through persuasion rather than exploitation. Having said that, some basic 20th-century security principles are still good enough to battle 21st-century AI risks, but perhaps not at the scale of AI. Until then, we will keep chasing ghosts in the dark with our traditional flashlights.
+
+Happy reading :)
+
+## Resources
+
+1. [Equipping agents for the real world with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
